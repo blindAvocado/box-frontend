@@ -17,8 +17,9 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
 
 <template>
   <div v-if="show" class="show">
-    <h1>{{ show.title }}</h1>
-    <div class="container"></div>
+    <div class="container">
+      <h1>{{ show.title }}</h1>
+    </div>
   </div>
 </template>
 

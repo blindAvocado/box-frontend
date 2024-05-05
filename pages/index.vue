@@ -2,7 +2,11 @@
 </script>
 
 <template>
-  <span>text</span>
+  <main class="main">
+    <div class="container">
+      <span>text</span>
+    </div>
+  </main>
 </template>
 
 <style lang="scss"></style>

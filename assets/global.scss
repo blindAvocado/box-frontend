@@ -111,8 +111,9 @@ button {
   background: none;
   border: none;
   font-family: 'Netflix Sans', sans-serif;
-  outline: none;
+  // outline: none;
   padding: 0;
+  cursor: pointer;
 }
 
 input {
@@ -128,8 +129,20 @@ input[type="submit"] {
   border-radius: 0;
 }
 
-.container {
-  max-width: 1100px;
+.container-big {
+  max-width: 1450px;
   margin: 0 auto;
+  padding: 0 25px;
   width: 100%;
+}
+
+.container {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.nuxt-icon svg{
+  margin-bottom: 0 !important;
 }
