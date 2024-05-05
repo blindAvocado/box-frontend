@@ -1,0 +1,42 @@
+$colors: (
+  "accent": (
+    "base": #ffc800,
+    "2": #ffce3a,
+    "3": #ffd458,
+    "4": #ffda72,
+    "5": #ffe08a,
+    "6": #ffe6a2
+  ),
+  "bg": (
+    "base": #0f0f0f,
+    "dark": #090909
+  ),
+  "text": (
+    "1": #ffffff,
+    "base": #d0d0d0,
+    "3": #adadad,
+    "4": #8a8a8a,
+    "5": #6f6f6f
+  ),
+  "elements": (
+    "mint": #1ecc6e,
+    "green": #00e054,
+    "blue": #47bdf2,
+    "orange": #fd8f26,
+    "red": #d81e12
+  ),
+  "border": (
+    "1": #262626,
+    "base": #3d3d3d,
+    "3": #555555,
+    "4": #6f6f6f
+  ),
+  "link": (
+    "hover": #ffe6a2
+  )
+);
+
+@function color($key, $type: "base") {
+  $map: map-get($colors, $key);
+  @return map-get($map, $type);
+}

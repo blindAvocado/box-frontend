@@ -1,0 +1,4 @@
+@function letter($percentage) {
+  $letterSpacing: calc($percentage / 100) + em;
+  @return $letterSpacing;
+}

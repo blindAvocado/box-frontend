@@ -1,0 +1,26 @@
+$breakpoints: (
+  'desktop': (
+    'base': 1280px,
+    'medium': 1440px,
+    'wide': 1610px,
+  ),
+  'mobile': (
+    'base': 320px,
+    'medium': 360px,
+    'wide': 480px,
+  ),
+  'tablet': (
+    'base': 576px,
+    'medium': 768px,
+    'wide': 1024px,
+  ),
+);
+
+@mixin breakpoint($key, $type: 'base') {
+  $map: map-get($breakpoints, $key);
+  $width: map-get($map, $type);
+
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}

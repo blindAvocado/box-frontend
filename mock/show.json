@@ -3,13 +3,16 @@
   "title": "Stargate SG-1",
   "overview": "The story of Stargate SG-1 begins about a year after the events of the feature film, when the United States government learns that an ancient alien device called the Stargate can access a network of such devices on a multitude of planets. SG-1 is an elite Air Force special operations team, one of more than two dozen teams from Earth who explore the galaxy and defend against alien threats such as the Goa'uld, Replicators, and the Ori",
   "tagline": "Saving the world... one episode at a time",
-  "posterPath": "/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg",
-  "backdropPath": "/5mXZ0sdVPfj4bSkhPSWwTX2LcM5.jpg",
+  "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg",
+  "backdropPath": "https://image.tmdb.org/t/p/original/5mXZ0sdVPfj4bSkhPSWwTX2LcM5.jpg",
   "properties": {
     "dateStarted": "27.07.1997",
     "dateEnded": "29.07.2008",
     "airStatus": "DEAD",
-    "countries": ["CA", "US"],
+    "countries": [
+      "CA",
+      "US"
+    ],
     "network": {
       "id": 77,
       "name": "Syfy"
@@ -37,35 +40,35 @@
     {
       "id": 26085,
       "name": "Richard Dean Anderson",
-      "profilePath": "/w9Wi0OUEFGy9vMUpiZjj9GLzpag.jpg",
+      "profilePath": "https://image.tmdb.org/t/p/original/w9Wi0OUEFGy9vMUpiZjj9GLzpag.jpg",
       "character": "Jack O'Neill",
       "order": 1
     },
     {
       "id": 26087,
       "name": "Amanda Tapping",
-      "profilePath": "/8ZiETPxUFtgrtWL0LgMwPP8ytuK.jpg",
+      "profilePath": "https://image.tmdb.org/t/p/original/8ZiETPxUFtgrtWL0LgMwPP8ytuK.jpg",
       "character": "Samantha Carter",
       "order": 2
     },
     {
       "id": 26088,
       "name": "Christopher Judge",
-      "profilePath": "/hxU7NXyTmVe7hbGnKJiLU6r9uQw.jpg",
+      "profilePath": "https://image.tmdb.org/t/p/original/hxU7NXyTmVe7hbGnKJiLU6r9uQw.jpg",
       "character": "Teal'c",
       "order": 3
     },
     {
       "id": 26086,
       "name": "Michael Shanks",
-      "profilePath": "/4YkOrSUmfKljqTMwGIo50oviKe1.jpg",
+      "profilePath": "https://image.tmdb.org/t/p/original/4YkOrSUmfKljqTMwGIo50oviKe1.jpg",
       "character": "Daniel Jackson",
       "order": 4
     },
     {
       "id": 26086,
       "name": "Don S. Davis",
-      "profilePath": "/gxUvCXIFxAMqcWgosErBP5rHKDw.jpg",
+      "profilePath": "https://image.tmdb.org/t/p/original/gxUvCXIFxAMqcWgosErBP5rHKDw.jpg",
       "character": "George Hammond",
       "order": 5
     }
@@ -128,22 +131,22 @@
   ],
   "seasons": [
     {
-			"id": 14151,
-			"number": 1,
-			"episodes": 22,
+      "id": 14151,
+      "number": 1,
+      "episodes": 22,
       "airdate": "1997-07-27",
-			"rating": 7.4,
+      "rating": 7.4,
       "name": "Season 1",
-			"posterPath": "/tiib6A0kZ0NoUeuUbcU0hIu2jlM.jpg"
+      "posterPath": "https://image.tmdb.org/t/p/original/tiib6A0kZ0NoUeuUbcU0hIu2jlM.jpg"
     },
     {
-			"id": 14141,
-			"number": 2,
-			"episodes": 22,
+      "id": 14141,
+      "number": 2,
+      "episodes": 22,
       "airdate": "1998-06-26",
-			"rating": 7.5,
+      "rating": 7.5,
       "name": "Season 2",
-			"posterPath": "/lBMPJS97E8t6ULrE6hrZSkdne15.jpg"
+      "posterPath": "https://image.tmdb.org/t/p/original/lBMPJS97E8t6ULrE6hrZSkdne15.jpg"
     }
   ],
   "episodes": [

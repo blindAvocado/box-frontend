@@ -1,6 +1,13 @@
 {
   "id": 9341,
   "username": "blindAvocado",
+  "loggedIn": true,
+  "role": "member",
+  "moderator": false,
   "mail": "blindavocado@gmail.com",
-  "gender": "male"
+  "gender": "male",
+  "avatar": {
+    "32": "avatar32.jpg",
+    "48": "avatar48.jpg"
+  }
 }

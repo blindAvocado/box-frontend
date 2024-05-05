@@ -1,0 +1,7 @@
+$fonts: (
+  'base': ('Netflix Sans', sans-serif),
+);
+
+@mixin font($key: 'base') {
+  font-family: map-get($fonts, $key);
+}

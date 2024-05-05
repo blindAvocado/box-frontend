@@ -1,13 +1,28 @@
 <script setup lang="ts">
-import Footer from '@common/Footer/Footer.vue';
-import Header from '@common/Header/Header.vue';
-
+import Footer from "@common/Footer/Footer.vue";
+import Header from "@common/Header/Header.vue";
 </script>
 
 <template>
-  <Header />
-  <div class="content">
-    <slot/>
+  <div class="page">
+    <Header />
+    <div class="content">
+      <slot />
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
+
+
+<style lang="scss" scoped>
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+
+  :deep(.footer) {
+    margin-top: auto;
+  }
+}
+</style>

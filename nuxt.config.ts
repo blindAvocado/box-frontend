@@ -1,10 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ["@nuxt/image"],
+  modules: ['@nuxt/image', 'nuxt-icons'],
   alias: {
-    "@": '../',
-    "@components": "../components",
-    "@common": "../components/common",
+    '@': '../',
+    '@components': '../components',
+    '@common': '../components/common',
+    '@types': '../types',
+  },
+  css: ['@/assets/global.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import '/assets/styles/index.scss';`,
+        }
+      }
+    }
   }
 });
