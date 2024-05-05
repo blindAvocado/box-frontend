@@ -1,0 +1,48 @@
+{
+  "id": 336043,
+  "episodeNumber": 1,
+  "seasonNumber": 1,
+  "name": "Children of the Gods (1)",
+  "overview": "When powerful aliens come through Earth's Stargate, Colonel Jack O'Neill returns to Abydos to retrieve Daniel Jackson, who has discovered that the alien transit system includes much more than the two planets.",
+  "airdate": "1997-07-27",
+  "runtime": 46,
+  "showId": 4629,
+  "stillPath": "/jjJoOsD0RM46kzbBs6nVHREj3yH.jpg",
+  "rating": {
+    "average": 7.6,
+    "votes": 59
+  },
+  "personal": {
+    "watched": true,
+    "watchedDate": "2021-07-15",
+    "rating": 7,
+    "favorite": false
+  },
+  "comments": [
+    {
+      "id": 12123,
+      "timestamp": 1686266202,
+      "owner": {
+        "id": 127564,
+        "name": "viktor",
+        "profilePath": "/profile.jpg"
+      },
+      "body": {
+        "text": "Хорошее начало",
+        "image": "/comment_image.jpg"
+      },
+      "subcomment": {
+        "id": 12125,
+        "timestamp": 1686267202,
+        "owner": {
+          "id": 4312,
+          "name": "max",
+          "profilePath": "/profile1.jpg"
+        },
+        "body": {
+          "text": "Согласен"
+        }
+      }
+    }
+  ]
+}

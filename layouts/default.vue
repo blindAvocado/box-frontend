@@ -1,7 +1,13 @@
+<script setup lang="ts">
+import Footer from '@common/Footer/Footer.vue';
+import Header from '@common/Header/Header.vue';
+
+</script>
+
 <template>
-  <header class="header"></header>
+  <Header />
   <div class="content">
     <slot/>
   </div>
-  <div class="footer"></div>
+  <Footer />
 </template>

@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <span>text</span>
+  <footer class="footer"></footer>
 </template>
 
 <style lang="scss"></style>

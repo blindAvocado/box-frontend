@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <div class="show">
-    show
+  <div class="episode">
+    episode
   </div>
 </template>
 

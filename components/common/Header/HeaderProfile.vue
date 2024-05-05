@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <span>text</span>
+  <div class="profile"></div>
 </template>
 
 <style lang="scss"></style>
