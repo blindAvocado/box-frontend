@@ -5,6 +5,7 @@ import { normalizeEpisodeMarking } from "~/utils/normalizeEpisode";
 import SidebarBlock from "~/components/base/SidebarBlock.vue";
 import MainInfo from "~/components/show/MainInfo.vue";
 import Poster from "~/components/show/Poster.vue";
+import Community from "~/components/show/Community.vue";
 
 interface SidebarItem {
   name: string;
@@ -69,7 +70,8 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
       <div class="show__wrapper" :class="{ 'show__wrapper--hasBackdrop': hasBackdrop }">
         <div class="show__content">
           <div class="left">
-            <Poster :poster="show.posterPath"/>
+            <Poster :poster="show.posterPath" />
+            <Community :community="show.community" />
           </div>
           <MainInfo :show/>
         </div>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Show } from "~/types/show";
 import { NuxtLink } from "#components";
 
-// import { normalizeShowAirYears, normalizeShowDetails } from "~/utils/normalizeShow";
+import type { Show } from "~/types/show";
+
 import Tabs from "~/components/base/Tabs.vue";
 import AirStatus from "~/components/show/AirStatus.vue";
 import ActorsList from "~/components/show/tabs/ActorsList.vue";

@@ -44,7 +44,7 @@ export interface Actor {
   order?: number;
 }
 
-interface Community {
+export interface Community {
   watching: number;
   lists: number;
   favorite: number;

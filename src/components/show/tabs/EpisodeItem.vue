@@ -29,21 +29,41 @@ defineProps<{
   padding: 12px;
   border-bottom: 1px solid color("border", "1");
 }
+
 .number {
   width: 20px;
   font-size: 14px;
   color: color("text", "3");
 }
+
 .title {
   flex: 1 1 30%;
   max-width: 55%;
   font-size: 15px;
   color: color("text", "base");
 }
+
 .tools {
-}
-.comments {
-}
-.date {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 1 0;
+
+  .comments {
+    width: 45px;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: color("text", "4");
+  }
+
+  .date {
+    font-size: 14px;
+    font-weight: 400;
+    color: color("text", "4");
+  }
 }
 </style>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { vAutoAnimate } from '@formkit/auto-animate'
 
 const props = defineProps<{
   tabs: { label: string, name: string }[];
@@ -25,7 +26,7 @@ const onTabClick = (tabName: string) => {
         <button class="tab-btn" @click.prevent="onTabClick(tab.name)">{{ tab.label }}</button>
       </li>
     </ul>
-    <div class="tab-content">
+    <div class="tab-content" v-auto-animate>
       <slot />
     </div>
   </div>

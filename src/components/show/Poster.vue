@@ -19,6 +19,20 @@ defineProps<{
 
 <style lang="scss" scoped>
 .poster {
-  min-width: 240px;
+  position: relative;
+  display: flex;
+  min-width: 230px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 10px 1px rgba(255, 255, 255, 0.2);
+  }
 }
 </style>
