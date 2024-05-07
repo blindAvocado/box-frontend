@@ -61,7 +61,9 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
       <NuxtImg
         v-if="show.backdropPath"
         :src="show.backdropPath"
-        :placeholder="[1100, 500, 75, 5]" 
+        :width="1200"
+        :height="675"
+        :placeholder="[1200, 675, 75, 3]" 
       />
     </div>
   </div>
@@ -109,7 +111,7 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
 
   &__content {
     display: flex;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     gap: 20px;
   }
 }
@@ -162,10 +164,11 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
 }
 
 .main {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }
 
 .sidebar {
+  flex: 1 0 auto;
   width: 180px;
 
   :deep(.sidebar-link) {

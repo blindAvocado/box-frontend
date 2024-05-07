@@ -56,14 +56,20 @@ const onTabClick = (tabName: string) => {
     color: color("text", "1");
   }
 
-  &--selected::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    height: 1px;
-    background-color: color("accent");
+  &--selected {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 1px;
+      background-color: color("accent");
+    }
+
+    .tab-btn {
+      color: color("text", "1");
+    }
   }
 }
 
