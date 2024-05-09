@@ -6,7 +6,7 @@ import type { Show } from "~/types/show";
 import Tabs from "~/components/base/Tabs.vue";
 import AirStatus from "~/components/show/AirStatus.vue";
 import ActorsList from "~/components/show/tabs/ActorsList.vue";
-import EpisodesList from "~/components/show/tabs/EpisodesList.vue";
+import EpisodesTab from "~/components/show/tabs/EpisodesTab.vue";
 
 const props = defineProps<{
   show: Show;
@@ -56,7 +56,7 @@ const tabs = [
     </ul>
     <Tabs :tabs :selected-tab @change-tab="onTabChange" class="show-tabs">
       <div v-if="selectedTab === 'episodes'" class="episodesTab">
-        <EpisodesList :seasons="show.seasons" :episodes="show.episodes"/>
+        <EpisodesTab :seasons="show.seasons" :episodes="show.episodes"/>
       </div>
       <div v-if="selectedTab === 'actors'" class="actorsTab">
         <ActorsList :actors="show.actors" />

@@ -21,6 +21,10 @@ const onReset = () => {
 }
 
 const onRated = (rating: number) => {
+  if (!localWatched.value) {
+    localWatched.value = true;
+  }
+  
   localRating.value = rating;
 }
 

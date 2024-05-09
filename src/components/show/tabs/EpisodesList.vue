@@ -36,6 +36,7 @@ const onSeasonToggle = (season: number) => {
   console.log("🚀 ~ onSeasonToggle ~ expandedSeasons:", expandedSeasons.value)
 }
 
+defineExpose({ expandedSeasons })
 </script>
 
 <template>

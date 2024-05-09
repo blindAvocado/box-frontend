@@ -14,7 +14,7 @@ const props = withDefaults(
 
 const emit = defineEmits(['click']);
 
-const onClick = (e: Event) => {
+const onClick = () => {
   emit('click');
 }
 
@@ -34,12 +34,22 @@ const onClick = (e: Event) => {
       class="checkbox__field"
       :class="{ 'checkbox__field--active': value === true }"
     >
-    <label v-if="label" :for="id" @click.prevent="onClick">{{ label }}</label>
+    <label
+      v-if="label"
+      :for="id"
+      @click.prevent="onClick"
+      class="checkbox__label"
+      >
+      {{ label }}
+    </label>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
   &__field {
     display: flex;
@@ -88,6 +98,12 @@ const onClick = (e: Event) => {
       display: block;
       background-image: url('~/assets/icons/check.svg');
     }
+  }
+
+  &__label {
+    cursor: pointer;
+    font-size: 14px;
+    color: color("text", "3");
   }
 }
 </style>
