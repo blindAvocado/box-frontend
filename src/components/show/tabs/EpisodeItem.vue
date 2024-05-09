@@ -1,9 +1,32 @@
 <script setup lang="ts">
+import Checkbox from '~/components/base/Checkbox.vue';
+import StarRating from '~/components/base/StarRating.vue';
 import type { Episode } from '~/types/show';
 
-defineProps<{
+const user = useUser();
+
+const props = defineProps<{
   episode: Episode;
 }>();
+
+const localWatched = ref(props.episode?.personal?.watched);
+const localRating = ref(props.episode?.personal?.rating ?? 0);
+
+const onWatchClick = () => {
+  localWatched.value = !localWatched.value;
+}
+
+const onReset = () => {
+  localRating.value = 0;
+}
+
+const onRated = (rating: number) => {
+  localRating.value = rating;
+}
+
+watch(localWatched, (val) => {
+  console.log("🚀 ~ watch ~ val:", val)
+})
 
 </script>
 
@@ -17,6 +40,18 @@ defineProps<{
         <nuxt-icon name="comment" />
       </div>
       <div class="date">{{ episode.airdate }}</div>
+      <StarRating
+        :value="localRating"
+        :height="22"
+        @rate="onRated"
+        @reset="onReset"
+      />
+      <Checkbox
+        v-if="user.loggedIn"
+        :value="localWatched"
+        @click="onWatchClick"
+        :id="`${episode.id}`"
+      />
     </div>
   </div>
 </template>
@@ -41,6 +76,10 @@ defineProps<{
   max-width: 55%;
   font-size: 15px;
   color: color("text", "base");
+
+  &:hover {
+    color: color("accent", "6");
+  }
 }
 
 .tools {
@@ -63,6 +102,7 @@ defineProps<{
   .date {
     font-size: 14px;
     font-weight: 400;
+    white-space: nowrap;
     color: color("text", "4");
   }
 }

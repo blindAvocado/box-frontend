@@ -1,26 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ["@vueuse/nuxt", "@nuxt/image", "nuxt-icons"],
+  modules: ["@vueuse/nuxt", "@nuxt/image", "nuxt-icons", '@pinia/nuxt',],
   srcDir: "src",
-  // alias: {
-  //   "@": "/<srcDir>",
-  //   "~": "/<srcDir>",
-  //   "@assets": "/<srcDir>/assets",
-  //   "@components": "/<srcDir>/components",
-  //   "@utils": "/<srcDir>/utils",
-  //   "@types": "/<srcDir>/types",
-  // },
-  // typescript: {
-  //   tsConfig: {
-  //     compilerOptions: {
-  //       paths: {
-  //         "@": ["./src"],
-  //         "@/*": ["./src/*"],
-  //       },
-  //     },
-  //   },
-  // },
   css: ["/assets/global.scss"],
   vite: {
     css: {

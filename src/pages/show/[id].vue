@@ -6,6 +6,7 @@ import SidebarBlock from "~/components/base/SidebarBlock.vue";
 import MainInfo from "~/components/show/MainInfo.vue";
 import Poster from "~/components/show/Poster.vue";
 import Community from "~/components/show/Community.vue";
+import Rating from "~/components/show/Rating.vue";
 
 interface SidebarItem {
   name: string;
@@ -73,7 +74,8 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
         <div class="show__content">
           <div class="left">
             <Poster :poster="show.posterPath" />
-            <Community :community="show.community" />
+            <Community :community="show.community" class="show__community" />
+            <Rating :community-rating="show.community.rating" class="show__rating" />
           </div>
           <MainInfo :show/>
         </div>
@@ -113,6 +115,14 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
     display: flex;
     flex: 1 1 auto;
     gap: 20px;
+  }
+
+  &__community {
+    margin-top: 10px;
+  }
+
+  &__rating {
+    margin-top: 15px;
   }
 }
 

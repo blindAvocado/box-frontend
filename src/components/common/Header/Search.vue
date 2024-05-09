@@ -17,8 +17,6 @@ const hideField = () => {
 };
 
 const onButtonClick = () => {
-  console.log("🚀 ~ Search ~ onButtonClick ~ isFieldActive:", isFieldActive.value);
-
   if (isFieldActive.value) {
     onSubmit();
   }
@@ -27,13 +25,16 @@ const onButtonClick = () => {
 };
 
 const onSubmit = () => {
-  console.log("🚀 ~ Search ~ onSubmit");
   if (!query.value) {
     return;
   }
 
   console.log(query.value);
 };
+
+watchDebounced(query, (val) => {
+  console.log("🚀 ~ watchDebounced ~ val:", val)
+}, { debounce: 500 })
 
 defineExpose({ isFieldActive });
 </script>

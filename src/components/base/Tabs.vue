@@ -79,7 +79,4 @@ const onTabClick = (tabName: string) => {
   color: color("text", "3");
   transition: all 0.3s $easing;
 }
-
-.tab-content {
-}
 </style>

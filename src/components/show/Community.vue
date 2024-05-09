@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { Community } from '~/types/show';
 
+import { normalizeBigNumbers } from '~/utils/common';
+
 defineProps<{
   community: Community
 }>();
@@ -13,15 +15,15 @@ const route = useRoute();
   <div class="community">
     <NuxtLink :to="`/show/${$route.params.id}/members`" class="community__item watching">
       <nuxt-icon name="eye"/>
-      <div class="community__value">{{ community.watching }}</div>
+      <div class="community__value">{{ normalizeBigNumbers(community.watching) }}</div>
     </NuxtLink>
     <NuxtLink :to="`/show/${$route.params.id}/lists`" class="community__item lists">
       <nuxt-icon name="list"/>
-      <div class="community__value">{{ community.lists }}</div>
+      <div class="community__value">{{ normalizeBigNumbers(community.lists) }}</div>
     </NuxtLink>
     <NuxtLink :to="`/show/${$route.params.id}/likes`" class="community__item favorites">
       <nuxt-icon name="heart"/>
-      <div class="community__value">{{ community.favorite }}</div>
+      <div class="community__value">{{ normalizeBigNumbers(community.favorite) }}</div>
     </NuxtLink>
   </div>
 </template>
@@ -38,8 +40,8 @@ const route = useRoute();
     align-items: center;
     gap: 3px;
 
-    &:hover {
-      color: color("text", "2") !important;
+    &:hover .community__value {
+      color: color("text", "base");
     }
 
     :deep(span) {
@@ -55,6 +57,8 @@ const route = useRoute();
   &__value {
     font-size: 12px;
     font-weight: 300;
+    color: color("text", "4");
+    transition: all 0.3s $easing;
   }
 
   .watching :deep(svg) {

@@ -48,16 +48,10 @@ export interface Community {
   watching: number;
   lists: number;
   favorite: number;
-  rating: ShowRating;
+  rating: Rating;
 }
 
-interface ShowRating {
-  native: Rating;
-  imdb: Rating;
-  kinopoisk?: Rating;
-}
-
-interface Rating {
+export interface Rating {
   average: number;
   votes: number;
 }
