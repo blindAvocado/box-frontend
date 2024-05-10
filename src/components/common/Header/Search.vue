@@ -46,7 +46,7 @@ defineExpose({ isFieldActive });
         <input v-show="isFieldActive" v-model="query" type="text" class="search__field" />
       </Transition>
       <button type="button" class="search__btn" @click.prevent="onButtonClick">
-        <nuxt-icon name="search" />
+        <svg-icon name="search" />
       </button>
     </form>
   </div>

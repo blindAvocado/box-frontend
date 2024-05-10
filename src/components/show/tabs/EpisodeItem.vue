@@ -41,7 +41,7 @@ watch(localWatched, (val) => {
     <div class="tools">
       <div v-if="episode.comments" class="comments">
         <span>{{ episode.comments }}</span>
-        <nuxt-icon name="comment" />
+        <svg-icon name="comment" />
       </div>
       <div class="date">{{ episode.airdate }}</div>
       <StarRating
@@ -64,6 +64,7 @@ watch(localWatched, (val) => {
 .episode-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 5px;
   padding: 12px;
   border-bottom: 1px solid color("border", "1");
@@ -101,6 +102,11 @@ watch(localWatched, (val) => {
     gap: 5px;
     font-size: 14px;
     color: color("text", "4");
+
+    :deep(svg) {
+      width: 16px;
+      height: 16px;
+    }
   }
 
   .date {

@@ -12,9 +12,11 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
     "@nuxt/image": "^1.7.0",
+    "@nuxtjs/svg-sprite": "^1.0.2",
     "@pinia/nuxt": "^0.5.1",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
+    "floating-vue": "^5.2.2",
     "nuxt": "^3.11.2",
     "nuxt-icons": "^3.2.1",
     "pinia": "^2.1.7",

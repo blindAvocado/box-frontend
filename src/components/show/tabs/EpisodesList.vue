@@ -49,7 +49,7 @@ defineExpose({ expandedSeasons })
     >
       <button @click.prevent="onSeasonToggle(season.number)" class="season__btn">
         <span class="season__name">{{ `${season.number} сезон` }}</span>
-        <nuxt-icon name="arrow-down" />
+        <svg-icon name="arrow-down" />
       </button>
       <ul
         :ref="(el) => episodesLists[season.number] = (el as Element)"

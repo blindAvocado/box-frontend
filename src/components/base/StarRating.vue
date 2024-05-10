@@ -109,24 +109,26 @@ const ratingToWidth = (rating: number, wrapperWidth: number): string => {
       @click="onChange(hoveredRating)"
       class="stars-wrapper"
     >
-      <nuxt-icon
+      <span
         ref="outlinedRef"
-        name="rating-outlined"
         class="stars stars--outlined"
-      />
-      <nuxt-icon 
+      >
+        <svg-icon name="rating-outlined-min" :width="wrapperWidth" />
+      </span>
+      <span
         ref="selectedRef" 
-        name="rating-selected"
         class="stars stars--selected"
         :style="{ display: starsVisiblity.selected, width: selectedWidth }"
-
-      />
-      <nuxt-icon 
+      >
+        <svg-icon name="rating-selected-min" :width="wrapperWidth" />
+      </span>
+      <span
         ref="hoveredRef" 
-        name="rating-hover"
         class="stars stars--hovered"
         :style="{ display: starsVisiblity.hovered, width: hoveredWidth }"
-      />
+      >
+        <svg-icon name="rating-hover-min" :width="wrapperWidth" />
+      </span>
     </button>
   </div>
 </template>
@@ -156,6 +158,7 @@ const ratingToWidth = (rating: number, wrapperWidth: number): string => {
 .stars-wrapper {
   position: relative;
   cursor: pointer;
+  width: v-bind("wrapperWidth");
 }
 
 .stars {
@@ -169,13 +172,14 @@ const ratingToWidth = (rating: number, wrapperWidth: number): string => {
   
   :deep(svg) {
     height: v-bind("starsHeight");
-    width: fit-content;
+    width: v-bind("wrapperWidth");
   }
 
   &--outlined {
     position: static;
-    display: flex;
+    display: block;
     width: 100%;
+    width: v-bind("wrapperWidth");
   }
 
   &--selected {

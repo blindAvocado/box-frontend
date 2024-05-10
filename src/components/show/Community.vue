@@ -14,15 +14,15 @@ const route = useRoute();
 <template>
   <div class="community">
     <NuxtLink :to="`/show/${$route.params.id}/members`" class="community__item watching">
-      <nuxt-icon name="eye"/>
+      <svg-icon name="eye"/>
       <div class="community__value">{{ normalizeBigNumbers(community.watching) }}</div>
     </NuxtLink>
     <NuxtLink :to="`/show/${$route.params.id}/lists`" class="community__item lists">
-      <nuxt-icon name="list"/>
+      <svg-icon name="list"/>
       <div class="community__value">{{ normalizeBigNumbers(community.lists) }}</div>
     </NuxtLink>
     <NuxtLink :to="`/show/${$route.params.id}/likes`" class="community__item favorites">
-      <nuxt-icon name="heart"/>
+      <svg-icon name="heart"/>
       <div class="community__value">{{ normalizeBigNumbers(community.favorite) }}</div>
     </NuxtLink>
   </div>

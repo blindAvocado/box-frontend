@@ -42,8 +42,11 @@ const toggleCollapse = () => {
         label="Группировать по сезонам"
         @click="toggleGroup"
       />
-      <button class="collapse-expand" @click.prevent="toggleCollapse">
-        <nuxt-icon :name="isCollapsed ? 'expand' : 'collapse'" />
+      <button
+        @click.prevent="toggleCollapse"
+        class="collapse-expand"
+      >
+        <svg-icon :name="isCollapsed ? 'expand' : 'collapse'" />
       </button>
     </div>
     <EpisodesList ref="episodesList" :seasons :episodes />
