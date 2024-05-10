@@ -1,264 +1,312 @@
 {
-  "id": 4629,
-  "title": "Stargate SG-1",
-  "overview": "The story of Stargate SG-1 begins about a year after the events of the feature film, when the United States government learns that an ancient alien device called the Stargate can access a network of such devices on a multitude of planets. SG-1 is an elite Air Force special operations team, one of more than two dozen teams from Earth who explore the galaxy and defend against alien threats such as the Goa'uld, Replicators, and the Ori",
-  "tagline": "Saving the world... one episode at a time",
-  "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg",
-  "backdropPath": "https://image.tmdb.org/t/p/original/5mXZ0sdVPfj4bSkhPSWwTX2LcM5.jpg",
-  "properties": {
-    "dateStarted": "27.07.1997",
-    "dateEnded": "29.07.2008",
-    "airStatus": "DEAD",
-    "countries": [
-      "CA",
-      "US"
-    ],
-    "network": {
-      "id": 77,
-      "name": "Syfy"
+  "show": {
+    "id": 4629,
+    "title": "Stargate SG-1",
+    "overview": "The story of Stargate SG-1 begins about a year after the events of the feature film, when the United States government learns that an ancient alien device called the Stargate can access a network of such devices on a multitude of planets. SG-1 is an elite Air Force special operations team, one of more than two dozen teams from Earth who explore the galaxy and defend against alien threats such as the Goa'uld, Replicators, and the Ori",
+    "tagline": "Saving the world... one episode at a time",
+    "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg",
+    "backdropPath": "https://image.tmdb.org/t/p/original/5mXZ0sdVPfj4bSkhPSWwTX2LcM5.jpg",
+    "properties": {
+      "dateStarted": "27.07.1997",
+      "dateEnded": "29.07.2008",
+      "airStatus": "DEAD",
+      "countries": ["CA", "US"],
+      "network": {
+        "id": 77,
+        "name": "Syfy"
+      },
+      "genres": [
+        {
+          "id": 10765,
+          "name": "Sci-Fi & Fantasy"
+        },
+        {
+          "id": 10759,
+          "name": "Action & Adventure"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        }
+      ],
+      "averageRuntime": 43,
+      "totalRuntime": 9555,
+      "episodes": 213,
+      "seasons": 10
     },
-    "genres": [
+    "actors": [
       {
-        "id": 10765,
-        "name": "Sci-Fi & Fantasy"
+        "id": 26085,
+        "name": "Richard Dean Anderson",
+        "profilePath": "https://image.tmdb.org/t/p/original/w9Wi0OUEFGy9vMUpiZjj9GLzpag.jpg",
+        "character": "Jack O'Neill",
+        "order": 1
       },
       {
-        "id": 10759,
-        "name": "Action & Adventure"
+        "id": 26087,
+        "name": "Amanda Tapping",
+        "profilePath": "https://image.tmdb.org/t/p/original/8ZiETPxUFtgrtWL0LgMwPP8ytuK.jpg",
+        "character": "Samantha Carter",
+        "order": 2
       },
       {
-        "id": 9648,
-        "name": "Mystery"
+        "id": 26088,
+        "name": "Christopher Judge",
+        "profilePath": "https://image.tmdb.org/t/p/original/hxU7NXyTmVe7hbGnKJiLU6r9uQw.jpg",
+        "character": "Teal'c",
+        "order": 3
+      },
+      {
+        "id": 26086,
+        "name": "Michael Shanks",
+        "profilePath": "https://image.tmdb.org/t/p/original/4YkOrSUmfKljqTMwGIo50oviKe1.jpg",
+        "character": "Daniel Jackson",
+        "order": 4
+      },
+      {
+        "id": 26086,
+        "name": "Don S. Davis",
+        "profilePath": "https://image.tmdb.org/t/p/original/gxUvCXIFxAMqcWgosErBP5rHKDw.jpg",
+        "character": "George Hammond",
+        "order": 5
       }
     ],
-    "averageRuntime": 43,
-    "totalRuntime": 9555,
-    "episodes": 213,
-    "seasons": 10
-  },
-  "actors": [
-    {
-      "id": 26085,
-      "name": "Richard Dean Anderson",
-      "profilePath": "https://image.tmdb.org/t/p/original/w9Wi0OUEFGy9vMUpiZjj9GLzpag.jpg",
-      "character": "Jack O'Neill",
-      "order": 1
-    },
-    {
-      "id": 26087,
-      "name": "Amanda Tapping",
-      "profilePath": "https://image.tmdb.org/t/p/original/8ZiETPxUFtgrtWL0LgMwPP8ytuK.jpg",
-      "character": "Samantha Carter",
-      "order": 2
-    },
-    {
-      "id": 26088,
-      "name": "Christopher Judge",
-      "profilePath": "https://image.tmdb.org/t/p/original/hxU7NXyTmVe7hbGnKJiLU6r9uQw.jpg",
-      "character": "Teal'c",
-      "order": 3
-    },
-    {
-      "id": 26086,
-      "name": "Michael Shanks",
-      "profilePath": "https://image.tmdb.org/t/p/original/4YkOrSUmfKljqTMwGIo50oviKe1.jpg",
-      "character": "Daniel Jackson",
-      "order": 4
-    },
-    {
-      "id": 26086,
-      "name": "Don S. Davis",
-      "profilePath": "https://image.tmdb.org/t/p/original/gxUvCXIFxAMqcWgosErBP5rHKDw.jpg",
-      "character": "George Hammond",
-      "order": 5
-    }
-  ],
-  "community": {
-    "watching": 3456,
-    "lists": 23,
-    "favorite": 17,
-    "rating": {
-      "native": {
+    "community": {
+      "watching": 3456,
+      "lists": 23,
+      "favorite": 17,
+      "rating": {
         "average": 8.6,
         "votes": 6235
-      },
-      "imdb": {
-        "average": 8.4,
-        "votes": 267900
-      },
-      "kinopoisk": {
-        "average": 8.4,
-        "votes": 12633
       }
-    }
+    },
+    "bestEpisodes": [
+      {
+        "id": 335903,
+        "seasonNumber": 4,
+        "episodeNumber": 6,
+        "rating": 9.4,
+        "title": "Window of Opportunity"
+      },
+      {
+        "id": 335903,
+        "seasonNumber": 7,
+        "episodeNumber": 22,
+        "rating": 9.4,
+        "title": "Lost City: Part 2"
+      },
+      {
+        "id": 335903,
+        "seasonNumber": 2,
+        "episodeNumber": 15,
+        "rating": 9.1,
+        "title": "The Fifth Race"
+      },
+      {
+        "id": 335903,
+        "seasonNumber": 7,
+        "episodeNumber": 21,
+        "rating": 8.9,
+        "title": "Lost City: Part 1"
+      },
+      {
+        "id": 335903,
+        "seasonNumber": 10,
+        "episodeNumber": 20,
+        "rating": 8.9,
+        "title": "Unending"
+      }
+    ],
+    "seasons": [
+      {
+        "id": 14151,
+        "number": 1,
+        "episodes": 22,
+        "airdate": "1997-07-27",
+        "rating": 7.4,
+        "name": "Season 1",
+        "posterPath": "https://image.tmdb.org/t/p/original/tiib6A0kZ0NoUeuUbcU0hIu2jlM.jpg"
+      },
+      {
+        "id": 14141,
+        "number": 2,
+        "episodes": 22,
+        "airdate": "1998-06-26",
+        "rating": 7.5,
+        "name": "Season 2",
+        "posterPath": "https://image.tmdb.org/t/p/original/lBMPJS97E8t6ULrE6hrZSkdne15.jpg"
+      }
+    ],
+    "episodes": [
+      {
+        "id": 336043,
+        "episodeNumber": 1,
+        "seasonNumber": 1,
+        "airdate": "1997-07-27",
+        "comments": 6,
+        "name": "Children of the Gods (1)",
+        "showId": 4629,
+        "rating": {
+          "average": 7.6,
+          "votes": 59
+        },
+        "personal": {
+          "watched": true,
+          "rating": 7,
+          "favorite": false
+        }
+      },
+      {
+        "id": 336063,
+        "episodeNumber": 2,
+        "seasonNumber": 1,
+        "airdate": "1997-07-27",
+        "name": "Children of the Gods (2)",
+        "showId": 4629,
+        "rating": {
+          "average": 8.5,
+          "votes": 10
+        },
+        "personal": {
+          "watched": true,
+          "rating": 8,
+          "favorite": false
+        }
+      },
+      {
+        "id": 336044,
+        "episodeNumber": 3,
+        "seasonNumber": 1,
+        "airdate": "1997-07-27",
+        "name": "The Enemy Within",
+        "showId": 4629,
+        "rating": {
+          "average": 7.3,
+          "votes": 34
+        },
+        "personal": {
+          "watched": true,
+          "rating": 7,
+          "favorite": false
+        }
+      },
+      {
+        "id": 336046,
+        "episodeNumber": 4,
+        "seasonNumber": 1,
+        "airdate": "1997-07-27",
+        "name": "Emancipation",
+        "showId": 4629,
+        "rating": {
+          "average": 6.2,
+          "votes": 31
+        },
+        "personal": {
+          "watched": true,
+          "rating": 5,
+          "favorite": false
+        }
+      },
+      {
+        "id": 335861,
+        "episodeNumber": 1,
+        "seasonNumber": 2,
+        "airdate": "1997-07-27",
+        "comments": 13,
+        "name": "The Serpent's Lair (3)",
+        "showId": 4629,
+        "rating": {
+          "average": 8.4,
+          "votes": 24
+        },
+        "personal": {
+          "watched": true,
+          "rating": 8,
+          "favorite": false
+        }
+      },
+      {
+        "id": 335852,
+        "episodeNumber": 2,
+        "seasonNumber": 2,
+        "airdate": "1997-07-27",
+        "name": "In the Line of Duty",
+        "showId": 4629,
+        "rating": {
+          "average": 7.8,
+          "votes": 25
+        },
+        "personal": {
+          "watched": true,
+          "rating": 7,
+          "favorite": false
+        }
+      },
+      {
+        "id": 335854,
+        "episodeNumber": 3,
+        "seasonNumber": 2,
+        "airdate": "1997-07-27",
+        "name": "Prisoners",
+        "showId": 4629,
+        "rating": {
+          "average": 7.2,
+          "votes": 23
+        },
+        "personal": {
+          "watched": false
+        }
+      }
+    ],
+    "friends": [
+      {
+        "id": 1,
+        "username": "chantines",
+        "rating": 3.5
+      },
+      {
+        "id": 2,
+        "username": "bond",
+        "rating": 4,
+        "avatar": "https://preview.redd.it/odd-question-was-bane-sexually-abused-by-cia-i-heard-that-v0-7qmjvvhyk7wc1.jpg?width=640&crop=smart&auto=webp&s=2192aff1d789f7207231556fb004876955b809c7"
+      }
+    ]
   },
-  "bestEpisodes": [
+  "alsoWatched": [
     {
-      "id": 335903,
-      "seasonNumber": 4,
-      "episodeNumber": 6,
-      "rating": 9.4,
-      "title": "Window of Opportunity"
+      "id": 2290,
+      "title": "Stargate Atlantis",
+      "bannerPath": "https://image.tmdb.org/t/p/original/SLAPI1h9SWBMLTCO8ULvTGiP9G.jpg",
+      "rating": 4,
+      "status": "DEAD"
     },
     {
-      "id": 335903,
-      "seasonNumber": 7,
-      "episodeNumber": 22,
-      "rating": 9.4,
-      "title": "Lost City: Part 2"
+      "id": 5148,
+      "title": "Stargate Universe",
+      "bannerPath": "https://image.tmdb.org/t/p/original/tK8eRUWVY8AVdDUPUxSzrmlLb0R.jpg",
+      "rating": 3.7,
+      "status": "DEAD"
     },
     {
-      "id": 335903,
-      "seasonNumber": 2,
-      "episodeNumber": 15,
-      "rating": 9.1,
-      "title": "The Fifth Race"
+      "id": 580,
+      "title": "Star Trek: Deep Space Nine",
+      "bannerPath": "https://image.tmdb.org/t/p/original/jB3Ksk1tvhksdTa0xvI7l4LFHsy.jpg",
+      "rating": 3.9,
+      "status": "DEAD"
     },
     {
-      "id": 335903,
-      "seasonNumber": 7,
-      "episodeNumber": 21,
-      "rating": 8.9,
-      "title": "Lost City: Part 1"
+      "id": 314,
+      "title": "Star Trek: Enterprise",
+      "bannerPath": "https://image.tmdb.org/t/p/original/gH5HQbMsSfPc0R41JYTefjB7klZ.jpg",
+      "rating": 3.8,
+      "status": "DEAD"
     },
     {
-      "id": 335903,
-      "seasonNumber": 10,
-      "episodeNumber": 20,
-      "rating": 8.9,
-      "title": "Unending"
-    }
-  ],
-  "seasons": [
-    {
-      "id": 14151,
-      "number": 1,
-      "episodes": 22,
-      "airdate": "1997-07-27",
-      "rating": 7.4,
-      "name": "Season 1",
-      "posterPath": "https://image.tmdb.org/t/p/original/tiib6A0kZ0NoUeuUbcU0hIu2jlM.jpg"
-    },
-    {
-      "id": 14141,
-      "number": 2,
-      "episodes": 22,
-      "airdate": "1998-06-26",
-      "rating": 7.5,
-      "name": "Season 2",
-      "posterPath": "https://image.tmdb.org/t/p/original/lBMPJS97E8t6ULrE6hrZSkdne15.jpg"
-    }
-  ],
-  "episodes": [
-    {
-      "id": 336043,
-      "episodeNumber": 1,
-      "seasonNumber": 1,
-      "name": "Children of the Gods (1)",
-      "showId": 4629,
-      "rating": {
-        "average": 7.6,
-        "votes": 59
-      },
-      "personal": {
-        "watched": true,
-        "rating": 7,
-        "favorite": false
-      }
-    },
-    {
-      "id": 336063,
-      "episodeNumber": 1,
-      "seasonNumber": 2,
-      "name": "Children of the Gods (2)",
-      "showId": 4629,
-      "rating": {
-        "average": 8.5,
-        "votes": 10
-      },
-      "personal": {
-        "watched": true,
-        "rating": 8,
-        "favorite": false
-      }
-    },
-    {
-      "id": 336044,
-      "episodeNumber": 1,
-      "seasonNumber": 3,
-      "name": "The Enemy Within",
-      "showId": 4629,
-      "rating": {
-        "average": 7.3,
-        "votes": 34
-      },
-      "personal": {
-        "watched": true,
-        "rating": 7,
-        "favorite": false
-      }
-    },
-    {
-      "id": 336046,
-      "episodeNumber": 1,
-      "seasonNumber": 4,
-      "name": "Emancipation",
-      "showId": 4629,
-      "rating": {
-        "average": 6.2,
-        "votes": 31
-      },
-      "personal": {
-        "watched": true,
-        "rating": 5,
-        "favorite": false
-      }
-    },
-    {
-      "id": 335861,
-      "episodeNumber": 1,
-      "seasonNumber": 2,
-      "name": "The Serpent's Lair (3)",
-      "showId": 4629,
-      "rating": {
-        "average": 8.4,
-        "votes": 24
-      },
-      "personal": {
-        "watched": true,
-        "rating": 8,
-        "favorite": false
-      }
-    },
-    {
-      "id": 335852,
-      "episodeNumber": 2,
-      "seasonNumber": 2,
-      "name": "In the Line of Duty",
-      "showId": 4629,
-      "rating": {
-        "average": 7.8,
-        "votes": 25
-      },
-      "personal": {
-        "watched": true,
-        "rating": 7,
-        "favorite": false
-      }
-    },
-    {
-      "id": 335854,
-      "episodeNumber": 3,
-      "seasonNumber": 2,
-      "name": "Prisoners",
-      "showId": 4629,
-      "rating": {
-        "average": 7.2,
-        "votes": 23
-      },
-      "personal": {
-        "watched": false
-      }
+      "id": 1855,
+      "title": "Star Trek: Voyager",
+      "bannerPath": "https://image.tmdb.org/t/p/original/7YFranrnnIcCrgsLYQsoq8aE3Ir.jpg",
+      "rating": 3.9,
+      "status": "DEAD"
     }
   ]
 }

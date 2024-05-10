@@ -1,3 +1,16 @@
+export interface IShowPage {
+  show: IShow,
+  alsoWatched: IShowCard[],
+}
+
+export interface IShowCard {
+  id: number;
+  title: string;
+  bannerPath: string;
+  rating: number;
+  airStatus: TAirStatus;
+}
+
 export interface IShow {
   id: number;
   title: string;
@@ -24,7 +37,7 @@ export interface IUserRating {
 interface IProperties {
   dateStarted?: string;
   dateEnded?: string;
-  airStatus: "DEAD" | "AIRING" | "PAUSED";
+  airStatus: TAirStatus;
   countries: string[];
   network: INetwork;
   genres: IGenre[];
@@ -33,6 +46,8 @@ interface IProperties {
   episodes: number;
   seasons: number;
 }
+
+type TAirStatus = "DEAD" | "AIRING" | "PAUSED"
 
 interface INetwork {
   id: number;

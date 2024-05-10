@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IShow, IUserRating } from "~/types/show";
+import type { IShow, IShowCard, IShowPage, IUserRating } from "~/types/show";
 import { normalizeEpisodeMarking } from "~/utils/normalizeEpisode";
 
 import SidebarBlock from "~/components/base/SidebarBlock.vue";
@@ -9,6 +9,8 @@ import Community from "~/components/show/Community.vue";
 import Rating from "~/components/show/Rating.vue";
 import WatchButton from "~/components/show/WatchButton.vue";
 import UserRating from "~/components/cards/UserRating.vue";
+import ShowBanner from "~/components/cards/ShowBanner.vue";
+import ListBlock from "~/components/base/ListBlock.vue";
 
 interface SidebarItem {
   name: string;
@@ -18,13 +20,21 @@ interface SidebarItem {
 const user = useUser();
 const route = useRoute();
 
-const { data: show } = await useFetch<IShow>(`/api/show/${route.params.id}`);
-if (!show.value) {
+const { data: showPage } = await useFetch<IShowPage>(`/api/show/${route.params.id}`);
+if (!showPage.value) {
   throw createError({
     statusCode: 404,
     statusMessage: "Page Not Found",
   });
 }
+
+const show = computed((): IShow | null => {
+  return showPage.value?.show ?? null
+})
+
+const alsoWatched = computed((): IShowCard[] | null => {
+  return showPage.value?.alsoWatched ?? null
+})
 
 const hasBackdrop = computed((): boolean => {
   return !!show.value?.backdropPath;
@@ -116,6 +126,13 @@ const friendsRatings = computed((): IUserRating[] | null => {
           </SidebarBlock>
         </div>
       </div>
+      <div v-if="alsoWatched" class="show__recommended">
+        <ListBlock title="С этим сериалом смотрят" :items="alsoWatched">
+          <template v-slot:default="{ item }">
+            <ShowBanner :show="item" />
+          </template>
+        </ListBlock>
+      </div>
     </div>
   </div>
 </template>
@@ -123,11 +140,12 @@ const friendsRatings = computed((): IUserRating[] | null => {
 <style lang="scss" scoped>
 .show {
   position: relative;
+  padding-bottom: 100px;
   
   &__wrapper {
     display: flex;
     gap: 20px;
-    padding: 100px 0 150px;
+    padding: 100px 0 50px;
 
     &--hasBackdrop {
       padding-top: 400px;
@@ -150,6 +168,13 @@ const friendsRatings = computed((): IUserRating[] | null => {
 
   &__watch-btn {
     margin-top: 15px;
+  }
+
+  &__recommended {
+    margin-left: 250px;
+    overflow: hidden;
+    max-width: 100%;
+    overflow-x: scroll;
   }
 }
 
