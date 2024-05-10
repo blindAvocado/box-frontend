@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { IRating } from '~/types/show';
 import { normalizeBigNumbers } from '~/utils/common';
 import { useUser } from '~/stores/user';
 import StarRating from '~/components/base/StarRating.vue';
+import type { IRating } from '~/types/base';
 
 const user = useUser();
 

@@ -142,7 +142,8 @@ const onStatusSelect = (status: StatusOption) => {
     transition: all 0.3s $easing;
 
     &:hover {
-      background-color: #131313;
+      // background-color: #131313;
+      background-color: #291f00;
     }
 
     &:first-child {

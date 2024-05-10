@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { IShow, IShowCard, IShowPage, IUserRating } from "~/types/show";
+import type { IShow, IShowCard, IShowPage } from "~/types/show";
+import type { IUserRating } from "~/types/base";
 import { normalizeEpisodeMarking } from "~/utils/normalizeEpisode";
 
 import SidebarBlock from "~/components/base/SidebarBlock.vue";
@@ -20,7 +21,7 @@ interface SidebarItem {
 const user = useUser();
 const route = useRoute();
 
-const { data: showPage } = await useFetch<IShowPage>(`/api/show/${route.params.id}`);
+const { data: showPage } = await useFetch<IShowPage>(`/api/show/${route.params.show_id}`);
 if (!showPage.value) {
   throw createError({
     statusCode: 404,
@@ -50,7 +51,7 @@ const bestEpisodes = computed((): SidebarItem[] => {
   for (const episode of show.value?.bestEpisodes) {
     const episodeName: string = normalizeEpisodeMarking(episode.seasonNumber, episode.episodeNumber);
     const name = `${episodeName}` + (episode.rating ? ` — ${episode.rating}` : "");
-    const link = `/show/${route.params.id}/episode/${episode.id}`;
+    const link = `/show/${route.params.show_id}/episode/${episode.id}`;
 
     result.push({
       name,
@@ -60,14 +61,13 @@ const bestEpisodes = computed((): SidebarItem[] => {
 
   result.push({
     name: "Все серии",
-    link: `/show/${route.params.id}/rating`,
+    link: `/show/${route.params.show_id}/rating`,
   });
 
   return result;
 });
 
 const friendsRatings = computed((): IUserRating[] | null => {
-  console.log("🚀 ~ friendsRatings ~ show.value?.friends:", show.value?.friends)
   return show.value?.friends ?? null
 })
 
@@ -75,7 +75,7 @@ const friendsRatings = computed((): IUserRating[] | null => {
 </script>
 
 <template>
-  <div v-if="show" class="backdrop-container">
+  <div v-if="show?.backdropPath" class="backdrop-container">
     <div class="backdrop">
       <NuxtPicture
         v-if="show.backdropPath"
@@ -106,7 +106,7 @@ const friendsRatings = computed((): IUserRating[] | null => {
             v-if="bestEpisodes"
             title="Лучшие серии"
             :items="bestEpisodes"
-            :link="`/show/${route.params.id}/rating`"
+            :link="`/show/${route.params.show_id}/rating`"
           >
             <template v-slot:default="{ item }">
               <div class="sidebar-link">
@@ -118,7 +118,7 @@ const friendsRatings = computed((): IUserRating[] | null => {
             v-if="friendsRatings"
             title="Оценки друзей"
             :items="friendsRatings"
-            :link="`/${user.username}/friends/show/${route.params.id}`"
+            :link="`/${user.username}/friends/show/${route.params.show_id}`"
           >
             <template v-slot:default="{ item }">
               <UserRating :user="item" />
@@ -140,7 +140,7 @@ const friendsRatings = computed((): IUserRating[] | null => {
 <style lang="scss" scoped>
 .show {
   position: relative;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   
   &__wrapper {
     display: flex;
@@ -173,8 +173,6 @@ const friendsRatings = computed((): IUserRating[] | null => {
   &__recommended {
     margin-left: 250px;
     overflow: hidden;
-    max-width: 100%;
-    overflow-x: scroll;
   }
 }
 

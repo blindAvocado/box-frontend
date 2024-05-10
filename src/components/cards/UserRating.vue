@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IUserRating } from '~/types/show';
+import type { IUserRating } from '~/types/base';
 import StarRating from '../base/StarRating.vue';
 
 defineProps<{

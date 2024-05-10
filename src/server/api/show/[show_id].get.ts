@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const showId = getRouterParam(event, 'id')
+  const showId = getRouterParam(event, 'show_id')
 
   try {
     const resp = await $fetch(`http://localhost:3001/show/${showId}`);

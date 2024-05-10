@@ -9,9 +9,12 @@ const props = defineProps<{
 }>();
 
 const episodesList = ref<InstanceType<typeof EpisodesList>>();
-const isCollapsed = ref<boolean>(false);
 const groupBySeason = ref<boolean>(false);
 const sortBy = ref<'ASC' | 'DESC'>('DESC');
+
+const isCollapsed = computed(() => {
+  return !episodesList.value?.expandedSeasons.length
+})
 
 const toggleGroup = () => {
   groupBySeason.value = !groupBySeason.value
@@ -27,8 +30,6 @@ const toggleCollapse = () => {
   } else {
     episodesList.value.expandedSeasons = [];
   }
-
-  isCollapsed.value = !isCollapsed.value
 }
 
 </script>

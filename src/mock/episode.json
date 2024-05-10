@@ -16,7 +16,20 @@
     "watched": true,
     "watchedDate": "2021-07-15",
     "rating": 7,
-    "favorite": false
+    "favorite": false,
+    "friends": [
+      {
+        "id": 1,
+        "username": "chantines",
+        "rating": 3.5
+      },
+      {
+        "id": 2,
+        "username": "bond",
+        "rating": 4,
+        "avatar": "https://preview.redd.it/odd-question-was-bane-sexually-abused-by-cia-i-heard-that-v0-7qmjvvhyk7wc1.jpg?width=640&crop=smart&auto=webp&s=2192aff1d789f7207231556fb004876955b809c7"
+      }
+    ]
   },
   "comments": [
     {
@@ -43,6 +56,50 @@
           "text": "Согласен"
         }
       }
+    }
+  ],
+  "otherEpisodes": [
+    {
+      "id": 336043,
+      "episodeNumber": 1,
+      "seasonNumber": 1,
+      "name": "Children of the Gods (1)"
+    },
+    {
+      "id": 336044,
+      "episodeNumber": 2,
+      "seasonNumber": 1,
+      "name": "Children of the Gods (2)"
+    },
+    {
+      "id": 336045,
+      "episodeNumber": 3,
+      "seasonNumber": 1,
+      "name": "The Enemy Within"
+    },
+    {
+      "id": 336046,
+      "episodeNumber": 4,
+      "seasonNumber": 1,
+      "name": "Emancipation"
+    },
+    {
+      "id": 336047,
+      "episodeNumber": 5,
+      "seasonNumber": 1,
+      "name": "The Broca Divide"
+    },
+    {
+      "id": 336048,
+      "episodeNumber": 6,
+      "seasonNumber": 1,
+      "name": "The First Commandment"
+    },
+    {
+      "id": 336049,
+      "episodeNumber": 7,
+      "seasonNumber": 1,
+      "name": "Cold Lazarus"
     }
   ]
 }

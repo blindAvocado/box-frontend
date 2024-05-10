@@ -1,3 +1,5 @@
+import type { IEpisodePersonal, IRating, IUserRating } from "./base";
+
 export interface IShowPage {
   show: IShow,
   alsoWatched: IShowCard[],
@@ -25,13 +27,6 @@ export interface IShow {
   seasons: ISeason[];
   episodes: IEpisode[];
   friends?: IUserRating[];
-}
-
-export interface IUserRating {
-  id: number,
-  username: string,
-  avatar?: string,
-  rating: number,
 }
 
 interface IProperties {
@@ -74,12 +69,6 @@ export interface ICommunity {
   rating: IRating;
 }
 
-export interface IRating {
-  average: number;
-  votes: number;
-}
-
-
 interface IBestEpisode {
   id: number;
   seasonNumber: number;
@@ -105,13 +94,7 @@ export interface IEpisode {
   name: string;
   showId: number;
   rating: IRating;
-  personal: IPersonal;
+  personal: IEpisodePersonal;
   comments?: number;
   airdate: string;
-}
-
-interface IPersonal {
-  watched: boolean;
-  rating?: number;
-  favorite?: boolean;
 }
