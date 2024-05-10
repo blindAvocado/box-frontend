@@ -1,4 +1,4 @@
-import type { Show } from "~/types/show";
+import type { IShow } from "~/types/show";
 
 export function normalizeShowAirYears(dateStarted: string, dateEnded?: string): string { 
   return dateStarted.split('.')[2] + '-' + (dateEnded ? dateEnded.split('.')[2] : 'н.в.');
@@ -30,7 +30,7 @@ export function normalizeShowTotalRuntime(totalRuntime: number): string {
   return result;
 }
 
-export function normalizeShowDetails(properties: Show['properties']) {
+export function normalizeShowDetails(properties: IShow['properties']) {
   const res = [];
 
   if (properties.dateStarted) {

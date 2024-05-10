@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { NuxtLink } from "#components";
-
-import type { Show } from "~/types/show";
+import type { IShow } from "~/types/show";
 
 import Tabs from "~/components/base/Tabs.vue";
 import AirStatus from "~/components/show/AirStatus.vue";
@@ -9,7 +8,7 @@ import ActorsList from "~/components/show/tabs/ActorsList.vue";
 import EpisodesTab from "~/components/show/tabs/EpisodesTab.vue";
 
 const props = defineProps<{
-  show: Show;
+  show: IShow;
 }>();
 
 const selectedTab = ref<string>('episodes');

@@ -108,6 +108,7 @@ const ratingToWidth = (rating: number, wrapperWidth: number): string => {
       @mouseleave="isHovered = false"
       @click="onChange(hoveredRating)"
       class="stars-wrapper"
+      :class="{ 'stars-wrapper--readonly': readonly }"
     >
       <span
         ref="outlinedRef"
@@ -159,6 +160,11 @@ const ratingToWidth = (rating: number, wrapperWidth: number): string => {
   position: relative;
   cursor: pointer;
   width: v-bind("wrapperWidth");
+  
+
+  &--readonly {
+    cursor: initial;
+  }
 }
 
 .stars {

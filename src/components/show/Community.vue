@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { Community } from '~/types/show';
+import type { ICommunity } from '~/types/show';
 
 import { normalizeBigNumbers } from '~/utils/common';
 
 defineProps<{
-  community: Community
+  community: ICommunity
 }>();
 
 const route = useRoute();
@@ -12,7 +12,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <div class="community">
+  <div v-if="community" class="community">
     <NuxtLink :to="`/show/${$route.params.id}/members`" class="community__item watching">
       <svg-icon name="eye"/>
       <div class="community__value">{{ normalizeBigNumbers(community.watching) }}</div>
@@ -55,7 +55,7 @@ const route = useRoute();
   }
 
   &__value {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 300;
     color: color("text", "4");
     transition: all 0.3s $easing;

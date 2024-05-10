@@ -8,10 +8,12 @@ defineProps<{
 
 <template>
   <div v-if="poster" class="poster">
-    <NuxtImg
+    <NuxtPicture
       :src="poster"
+      format="avif,webp,jpg"
       height="345"
       densities="x1 x2"
+      sizes="md:230px"
       :placeholder="[230, 345, 75, 5]" 
     />
   </div>

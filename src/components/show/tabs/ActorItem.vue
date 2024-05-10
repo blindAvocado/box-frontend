@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Actor } from '~/types/show';
+import type { IActor } from '~/types/show';
 
 defineProps<{
-  actor: Actor;
+  actor: IActor;
 }>()
 
 </script>

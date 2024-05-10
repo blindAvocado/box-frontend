@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Show } from "~/types/show";
+import type { IShow, IUserRating } from "~/types/show";
 import { normalizeEpisodeMarking } from "~/utils/normalizeEpisode";
 
 import SidebarBlock from "~/components/base/SidebarBlock.vue";
@@ -7,15 +7,18 @@ import MainInfo from "~/components/show/MainInfo.vue";
 import Poster from "~/components/show/Poster.vue";
 import Community from "~/components/show/Community.vue";
 import Rating from "~/components/show/Rating.vue";
+import WatchButton from "~/components/show/WatchButton.vue";
+import UserRating from "~/components/cards/UserRating.vue";
 
 interface SidebarItem {
   name: string;
   link: string;
 }
 
+const user = useUser();
 const route = useRoute();
 
-const { data: show } = await useFetch<Show>(`/api/show/${route.params.id}`);
+const { data: show } = await useFetch<IShow>(`/api/show/${route.params.id}`);
 if (!show.value) {
   throw createError({
     statusCode: 404,
@@ -53,14 +56,20 @@ const bestEpisodes = computed((): SidebarItem[] => {
   return result;
 });
 
-console.log("🚀 ~ onBeforeMount ~ show:", show);
+const friendsRatings = computed((): IUserRating[] | null => {
+  console.log("🚀 ~ friendsRatings ~ show.value?.friends:", show.value?.friends)
+  return show.value?.friends ?? null
+})
+
+// console.log("🚀 ~ onBeforeMount ~ show:", show);
 </script>
 
 <template>
   <div v-if="show" class="backdrop-container">
     <div class="backdrop">
-      <NuxtImg
+      <NuxtPicture
         v-if="show.backdropPath"
+        format="avif,webp,jpg"
         :src="show.backdropPath"
         :width="1200"
         :height="675"
@@ -72,15 +81,19 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
     <div class="container">
       <div class="show__wrapper" :class="{ 'show__wrapper--hasBackdrop': hasBackdrop }">
         <div class="show__content">
-          <div class="left">
-            <Poster :poster="show.posterPath" />
-            <Community :community="show.community" class="show__community" />
-            <Rating :community-rating="show.community.rating" class="show__rating" />
+          <div class="left-wrapper">
+            <div class="left">
+              <Poster :poster="show.posterPath" />
+              <Community :community="show.community" class="show__community" />
+              <Rating :community-rating="show.community.rating" class="show__rating" />
+              <WatchButton class="show__watch-btn" />
+            </div>
           </div>
           <MainInfo :show/>
         </div>
         <div class="sidebar">
           <SidebarBlock
+            v-if="bestEpisodes"
             title="Лучшие серии"
             :items="bestEpisodes"
             :link="`/show/${route.params.id}/rating`"
@@ -89,6 +102,16 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
               <div class="sidebar-link">
                 <NuxtLink :to="item.link">{{ item.name }}</NuxtLink>
               </div>
+            </template>
+          </SidebarBlock>
+          <SidebarBlock
+            v-if="friendsRatings"
+            title="Оценки друзей"
+            :items="friendsRatings"
+            :link="`/${user.username}/friends/show/${route.params.id}`"
+          >
+            <template v-slot:default="{ item }">
+              <UserRating :user="item" />
             </template>
           </SidebarBlock>
         </div>
@@ -104,7 +127,7 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
   &__wrapper {
     display: flex;
     gap: 20px;
-    padding: 80px 0;
+    padding: 100px 0 150px;
 
     &--hasBackdrop {
       padding-top: 400px;
@@ -122,6 +145,10 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
   }
 
   &__rating {
+    margin-top: 15px;
+  }
+
+  &__watch-btn {
     margin-top: 15px;
   }
 }
@@ -162,13 +189,22 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
     z-index: 0;
   }
 
-  img {
+  img,
+  picture {
     object-fit: cover;
     width: 100%;
   }
 }
 
+.left-wrapper {
+  width: 230px;
+}
+
 .left {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
   flex: 1 0;
   max-width: 230px;
 }
@@ -178,6 +214,9 @@ console.log("🚀 ~ onBeforeMount ~ show:", show);
 }
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   flex: 1 0 auto;
   width: 180px;
 

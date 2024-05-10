@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Rating } from '~/types/show';
+import type { IRating } from '~/types/show';
 import { normalizeBigNumbers } from '~/utils/common';
 import { useUser } from '~/stores/user';
 import StarRating from '~/components/base/StarRating.vue';
@@ -8,7 +8,7 @@ const user = useUser();
 
 const props = withDefaults(
   defineProps<{
-    communityRating: Rating,
+    communityRating: IRating,
     myRating?: number,
   }>(),
   {

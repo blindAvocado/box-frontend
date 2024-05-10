@@ -1,15 +1,14 @@
 <script setup lang="ts">
-
-import type { Episode, Season } from '~/types/show';
+import type { IEpisode, ISeason } from '~/types/show';
 import EpisodeItem from '~/components/show/tabs/EpisodeItem.vue';
 
-interface SeasonWithEpisodes extends Season {
-  episodeList: Episode[];
+interface SeasonWithEpisodes extends ISeason {
+  episodeList: IEpisode[];
 }
 
 const props = defineProps<{
-  seasons: Season[];
-  episodes: Episode[];
+  seasons: ISeason[];
+  episodes: IEpisode[];
 }>();
 
 const episodesLists = ref<Record<number, Element | null>>({});

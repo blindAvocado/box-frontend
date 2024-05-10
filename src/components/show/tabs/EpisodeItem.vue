@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import Checkbox from '~/components/base/Checkbox.vue';
 import StarRating from '~/components/base/StarRating.vue';
-import type { Episode } from '~/types/show';
+import type { IEpisode } from '~/types/show';
 
 const user = useUser();
 
 const props = defineProps<{
-  episode: Episode;
+  episode: IEpisode;
 }>();
 
 const localWatched = ref(props.episode?.personal?.watched);

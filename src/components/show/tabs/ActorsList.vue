@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { Actor } from '~/types/show';
+import type { IActor } from '~/types/show';
 import ActorItem from '~/components/show/tabs/ActorItem.vue';
 
 const props = defineProps<{
-  actors: Actor[]
+  actors: IActor[]
 }>()
 
-const orderedActors = computed((): Actor[] => {
+const orderedActors = computed((): IActor[] => {
   const filteredList = props.actors.filter(item => !!item).sort((a, b) => {
     if (a.order && b.order) {
       return a.order > b.order ? 1 : -1

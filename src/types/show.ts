@@ -1,42 +1,50 @@
-export interface Show {
+export interface IShow {
   id: number;
   title: string;
   overview?: string;
   tagline?: string;
   posterPath: string;
   backdropPath?: string;
-  properties: Properties;
-  actors: Actor[];
-  community: Community;
-  bestEpisodes?: BestEpisode[];
-  seasons: Season[];
-  episodes: Episode[];
+  properties: IProperties;
+  actors: IActor[];
+  community: ICommunity;
+  bestEpisodes?: IBestEpisode[];
+  seasons: ISeason[];
+  episodes: IEpisode[];
+  friends?: IUserRating[];
 }
 
-interface Properties {
+export interface IUserRating {
+  id: number,
+  username: string,
+  avatar?: string,
+  rating: number,
+}
+
+interface IProperties {
   dateStarted?: string;
   dateEnded?: string;
   airStatus: "DEAD" | "AIRING" | "PAUSED";
   countries: string[];
-  network: Network;
-  genres: Genre[];
+  network: INetwork;
+  genres: IGenre[];
   averageRuntime?: number;
   totalRuntime: number;
   episodes: number;
   seasons: number;
 }
 
-interface Network {
+interface INetwork {
   id: number;
   name: string;
 }
 
-interface Genre {
+interface IGenre {
   id: number;
   name: string;
 }
 
-export interface Actor {
+export interface IActor {
   id: number;
   name: string;
   profilePath?: string;
@@ -44,20 +52,20 @@ export interface Actor {
   order?: number;
 }
 
-export interface Community {
+export interface ICommunity {
   watching: number;
   lists: number;
   favorite: number;
-  rating: Rating;
+  rating: IRating;
 }
 
-export interface Rating {
+export interface IRating {
   average: number;
   votes: number;
 }
 
 
-interface BestEpisode {
+interface IBestEpisode {
   id: number;
   seasonNumber: number;
   episodeNumber: number;
@@ -65,7 +73,7 @@ interface BestEpisode {
   title: string;
 }
 
-export interface Season {
+export interface ISeason {
   id: number;
   number: number;
   episodes: number;
@@ -75,19 +83,19 @@ export interface Season {
   posterPath?: string;
 }
 
-export interface Episode {
+export interface IEpisode {
   id: number;
   episodeNumber: number;
   seasonNumber: number;
   name: string;
   showId: number;
-  rating: Rating;
-  personal: Personal;
+  rating: IRating;
+  personal: IPersonal;
   comments?: number;
   airdate: string;
 }
 
-interface Personal {
+interface IPersonal {
   watched: boolean;
   rating?: number;
   favorite?: boolean;

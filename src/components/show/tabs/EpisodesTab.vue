@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { Episode, Season } from '~/types/show';
+import type { IEpisode, ISeason } from '~/types/show';
 import EpisodesList from '~/components/show/tabs/EpisodesList.vue';
 import Checkbox from '~/components/base/Checkbox.vue';
 
 const props = defineProps<{
-  seasons: Season[];
-  episodes: Episode[];
+  seasons: ISeason[];
+  episodes: IEpisode[];
 }>();
 
 const episodesList = ref<InstanceType<typeof EpisodesList>>();
