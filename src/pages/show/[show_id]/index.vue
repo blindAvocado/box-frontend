@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { IShow, IShowCard, IShowPage } from "~/types/show";
 import type { IUserRating } from "~/types/base";
-import { normalizeEpisodeMarking } from "~/utils/normalizeEpisode";
 
 import SidebarBlock from "~/components/base/SidebarBlock.vue";
 import MainInfo from "~/components/show/MainInfo.vue";

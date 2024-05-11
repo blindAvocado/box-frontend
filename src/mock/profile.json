@@ -1,0 +1,241 @@
+{
+  "user": {
+    "id": 64,
+    "username": "blindAvocado",
+    "avatar": "https://preview.redd.it/odd-question-was-bane-sexually-abused-by-cia-i-heard-that-v0-7qmjvvhyk7wc1.jpg?width=640&crop=smart&auto=webp&s=2192aff1d789f7207231556fb004876955b809c7"
+  },
+  "stats": {
+    "episodesThisYear": 325,
+    "lists": 5,
+    "following": 6,
+    "followed": 9,
+    "watching": 14,
+    "goingTo": 56,
+    "stopped": 7,
+    "watchedAll": 32
+  },
+  "socials": {
+    "vk": "blindAvocado",
+    "telegram": "blindAvocado"
+  },
+  "wasted": {
+    "watchedEpisodes": 3765,
+    "totalEpisodes": 6986,
+    "watchedHours": 1628,
+    "totalHours": 3687,
+    "watchedDays": 68,
+    "totalDays": 134
+  },
+  "ratings": {
+    "1": 0,
+    "2": 2,
+    "3": 9,
+    "4": 17,
+    "5": 5,
+    "4.5": 8,
+    "3.5": 26,
+    "2.5": 4,
+    "1.5": 0,
+    "0.5": 0
+  },
+  "recentLists": [
+    {
+      "id": 1,
+      "title": "Фантастика 00-х",
+      "count": 13,
+      "items": [
+        {
+          "type": "show",
+          "id": 2357,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        },
+        {
+          "type": "show",
+          "id": 7653,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        },
+        {
+          "type": "show",
+          "id": 96723,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Лучшее 2023",
+      "count": 7,
+      "items": [
+        {
+          "type": "show",
+          "id": 2357,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        },
+        {
+          "type": "show",
+          "id": 7653,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        },
+        {
+          "type": "show",
+          "id": 96723,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Фантастика 00-х",
+      "count": 13,
+      "items": [
+        {
+          "type": "show",
+          "id": 2357,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        },
+        {
+          "type": "show",
+          "id": 7653,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        },
+        {
+          "type": "show",
+          "id": 96723,
+          "posterPath": "https://image.tmdb.org/t/p/original/dQjmI7XxI47v8IM2MUysHG0LuU2.jpg"
+        }
+      ]
+    }
+  ],
+  "following": [
+    {
+      "id": 1,
+      "username": "chantines"
+    },
+    {
+      "id": 2,
+      "username": "bond",
+      "avatar": "https://preview.redd.it/odd-question-was-bane-sexually-abused-by-cia-i-heard-that-v0-7qmjvvhyk7wc1.jpg?width=640&crop=smart&auto=webp&s=2192aff1d789f7207231556fb004876955b809c7"
+    },
+    {
+      "id": 3,
+      "username": "deadmaun"
+    },
+    {
+      "id": 4,
+      "username": "DrBeybutyan"
+    },
+    {
+      "id": 5,
+      "username": "magicflex"
+    },
+    {
+      "id": 6,
+      "username": "BringingItAllBackHome"
+    }
+  ],
+  "activity": [
+    {
+      "date": "2023-06-09T00:00:00.000Z",
+      "watchedRuntime": 130,
+      "items": [
+        {
+          "event": "rated",
+          "value": 4.5,
+          "target": {
+            "type": "episode",
+            "id": 2357,
+            "season": 1,
+            "episode": 1,
+            "show": {
+              "id": 4378,
+              "name": "Stargate SG-1"
+            }
+          }
+        },
+        {
+          "event": "watched",
+          "target": {
+            "type": "episode",
+            "id": 2358,
+            "season": 1,
+            "episode": 2,
+            "show": {
+              "id": 4378,
+              "name": "Stargate SG-1"
+            }
+          }
+        },
+        {
+          "event": "status",
+          "value": "WATCHING",
+          "target": {
+            "type": "show",
+            "id": 4378,
+            "name": "Stargate SG-1"
+          }
+        },
+        {
+          "event": "status",
+          "value": "GOING_TO",
+          "target": {
+            "type": "show",
+            "id": 4379,
+            "name": "Stargate Atlantis"
+          }
+        },
+        {
+          "event": "comment",
+          "value": 73254,
+          "target": {
+            "type": "episode",
+            "id": 2358,
+            "season": 1,
+            "episode": 2,
+            "show": {
+              "id": 4378,
+              "name": "Stargate SG-1"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "watching": [
+    {
+      "id": 346,
+      "title": "Star Trek: The Original Series",
+      "airStatus": "DEAD",
+      "rating": 4.5,
+      "watchedEpisodes": 70,
+      "totalEpisodes": 79,
+      "bannerPath": "https://image.tmdb.org/t/p/original/5mXZ0sdVPfj4bSkhPSWwTX2LcM5.jpg"
+    },
+    {
+      "id": 4629,
+      "title": "Stargate SG-1",
+      "airStatus": "DEAD",
+      "rating": 4,
+      "watchedEpisodes": 114,
+      "totalEpisodes": 213,
+      "bannerPath": "https://image.tmdb.org/t/p/original/5mXZ0sdVPfj4bSkhPSWwTX2LcM5.jpg"
+    }
+  ],
+  "heatmap": [
+    {
+      "date": "2023-9-22",
+      "count": 7
+    },
+    {
+      "date": "2023-9-23",
+      "count": 2
+    },
+    {
+      "date": "2023-9-27",
+      "count": 1
+    },
+    {
+      "date": "2023-9-29",
+      "count": 4
+    }
+  ]
+}

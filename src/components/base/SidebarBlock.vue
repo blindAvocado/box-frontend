@@ -4,7 +4,7 @@ import { NuxtLink } from "#components";
 withDefaults(
   defineProps<{
     title: string;
-    items: any[];
+    items?: any[];
     link?: string;
     showCount?: boolean;
     count?: number;
@@ -17,7 +17,7 @@ withDefaults(
 </script>
 
 <template>
-  <div v-if="items.length" class="sideblock">
+  <div class="sideblock">
     <div class="header">
       <component
         :is="link ? NuxtLink : 'div'"
@@ -29,11 +29,14 @@ withDefaults(
       </component>
     </div>
     <div class="body">
-      <ul class="list">
+      <ul v-if="items?.length" class="list">
         <li v-for="(item, index) in items" :key="index" class="item">
           <slot :item="item"></slot>
         </li>
       </ul>
+      <template v-else>
+        <slot name="single"></slot>
+      </template>
     </div>
   </div>
 </template>

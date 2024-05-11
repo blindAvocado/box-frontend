@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { ICommunity } from '~/types/show';
 
-import { normalizeBigNumbers } from '~/utils/common';
-
 defineProps<{
   community: ICommunity
 }>();
