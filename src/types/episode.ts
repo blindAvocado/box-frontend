@@ -27,16 +27,16 @@ export interface IOtherEpisode {
 
 export interface IComment {
   id: number
-  timestamp: number
+  createdAt: string
   owner: ICommentOwner
   body: ICommentBody
   subcomment: IComment
 }
 
-interface ICommentOwner {
+export interface ICommentOwner {
   id: number
-  name: string
-  profilePath?: string
+  username: string
+  avatar?: string
 }
 
 interface ICommentBody {

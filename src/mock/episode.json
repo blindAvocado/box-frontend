@@ -7,6 +7,8 @@
   "airdate": "1997-07-27",
   "runtime": 46,
   "showId": 4629,
+  "watched": 13478,
+  "showName": "Stargate SG-1",
   "stillPath": "https://image.tmdb.org/t/p/original/jjJoOsD0RM46kzbBs6nVHREj3yH.jpg",
   "rating": {
     "average": 7.6,
@@ -17,6 +19,7 @@
     "watchedDate": "2021-07-15",
     "rating": 7,
     "favorite": false,
+    "commentsOpen": false,
     "friends": [
       {
         "id": 1,
@@ -34,11 +37,10 @@
   "comments": [
     {
       "id": 12123,
-      "timestamp": 1686266202,
+      "createdAt": "2023-06-09T23:16:42.000Z",
       "owner": {
         "id": 127564,
-        "name": "viktor",
-        "profilePath": "/profile.jpg"
+        "username": "viktor"
       },
       "body": {
         "text": "Хорошее начало",
@@ -46,11 +48,10 @@
       },
       "subcomment": {
         "id": 12125,
-        "timestamp": 1686267202,
+        "createdAt": "2023-06-08T23:16:42.000Z",
         "owner": {
           "id": 4312,
-          "name": "max",
-          "profilePath": "/profile1.jpg"
+          "username": "max"
         },
         "body": {
           "text": "Согласен"

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { IComment } from '~/types/episode';
 import CommentField from './CommentField.vue';
+import CommentTree from './CommentTree.vue';
 
 
 const props = defineProps<{
@@ -47,10 +48,15 @@ const countComments = (obj: any, count: number = 0): number => {
     </div>
     <div v-if="!localOpen" class="comments__closed">
       <div class="comments__spoiler">Комментарии скрыты, так как в них могут содержаться спойлеры</div>
-      <button type="button" class="comments__open" @click.prevent="onOpenComments">Показать комментарии</button>
+      <BaseButton @on-click="onOpenComments" class="comments__open">Показать комментарии</BaseButton>
     </div>
     <div v-else class="comments__opened">
-      <CommentField />
+      <CommentTree v-if="comments" :comments />
+      <div v-else class="comments__empty">Комментариев пока нет, и Вы можете оставить первый!</div>
+      <div class="comments__new">
+        <div class="comments__new-title">Написать комментарий</div>
+        <CommentField />
+      </div>
     </div>
   </div>
 </template>
@@ -76,9 +82,6 @@ const countComments = (obj: any, count: number = 0): number => {
     margin-left: 3px;
   }
 
-  &__closed {
-  }
-
   &__spoiler {
     font-size: 16px;
     font-weight: 400;
@@ -86,14 +89,17 @@ const countComments = (obj: any, count: number = 0): number => {
   }
 
   &__open {
-    padding: 10px;
-    width: 100%;
     max-width: 400px;
-    border-radius: 10px;
-    background-color: color("accent", "base");
-    font-size: 20px;
-    font-weight: 700;
-    color: #554300;
+  }
+
+  &__new {
+    margin-top: 20px;
+    
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
   }
 }
 </style>

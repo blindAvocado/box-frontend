@@ -5,6 +5,7 @@ import { NuxtLink } from '#components';
 import SidebarBlock from '~/components/base/SidebarBlock.vue';
 import UserRating from '~/components/cards/UserRating.vue';
 import Breadcrumbs from '~/components/base/Breadcrumbs.vue';
+import EpisodeMainInfo from '~/components/episode/EpisodeMainInfo.vue';
 
 const user = useUser();
 const route = useRoute();

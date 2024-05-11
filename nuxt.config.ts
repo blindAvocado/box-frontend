@@ -4,6 +4,11 @@ import { join } from 'path';
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ["@vueuse/nuxt", "@nuxt/image", "nuxt-icons", '@pinia/nuxt', 'floating-vue/nuxt', '@nuxtjs/svg-sprite'],
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
   svgSprite: {
     input: '~/src/assets/icons',
     output: '~/src/assets/gen',

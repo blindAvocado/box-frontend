@@ -3,6 +3,7 @@ import { NuxtLink } from '#components';
 import type { IEpisodePage, IOtherEpisode } from '~/types/episode';
 import Checkbox from '../base/Checkbox.vue';
 import StarRating from '../base/StarRating.vue';
+import EpisodeComments from './EpisodeComments.vue';
 
 const user = useUser();
 
@@ -11,43 +12,33 @@ const props = defineProps<{
   otherEpisodes: IOtherEpisode[] | null,
 }>();
 
+console.log("🚀 ~ otherEpisodes:", props.otherEpisodes)
+
+const getCurrentEpisode = (): IOtherEpisode | null => {
+  return props.otherEpisodes?.find((item) => item.id === props.episode.id) ?? null
+}
+
+const getAdjacentEpisode = (adjacency: "prev" | "next"): IOtherEpisode | null => {
+  if (!currentEpisode.value) {
+    return null;
+  }
+
+  const curEpisodeIndex = props.otherEpisodes?.indexOf(currentEpisode.value) ?? -1;
+  if (curEpisodeIndex < 0) {
+    return null;
+  }
+
+  const adjacencyIndex = adjacency === "prev" ? -1 : 1;
+
+  return props.otherEpisodes?.[curEpisodeIndex + adjacencyIndex] ?? null
+}
+
+const currentEpisode = ref<IOtherEpisode | null>(getCurrentEpisode());
+const prevEpisode = ref<IOtherEpisode | null>(getAdjacentEpisode("prev"));
+const nextEpisode = ref<IOtherEpisode | null>(getAdjacentEpisode("next"));
+
 const localWatched = ref(props.episode?.personal?.watched);
 const localRating = ref(user.loggedIn ? props.episode?.personal?.rating ?? 0 : props.episode?.rating.average);
-
-const currentEpisode = computed((): IOtherEpisode | null => {
-  return props.otherEpisodes?.find((item) => {
-    item.id === props.episode.id
-  }) ?? null
-});
-
-const prevEpisode = computed((): IOtherEpisode | null => {
-  console.log("🚀 ~ prevEpisode ~ currentEpisode:", currentEpisode.value)
-  if (!currentEpisode.value) {
-    return null;
-  }
-
-  const curEpisodeIndex = props.otherEpisodes?.indexOf(currentEpisode.value) ?? -1;
-  if (curEpisodeIndex < 0) {
-    return null;
-  }
-
-  return props.otherEpisodes?.[curEpisodeIndex - 1] ?? null
-});
-
-const nextEpisode = computed((): IOtherEpisode | null => {
-  console.log("🚀 ~ prevEpisode ~ currentEpisode:", currentEpisode.value)
-
-  if (!currentEpisode.value) {
-    return null;
-  }
-
-  const curEpisodeIndex = props.otherEpisodes?.indexOf(currentEpisode.value) ?? -1;
-  if (curEpisodeIndex < 0) {
-    return null;
-  }
-
-  return props.otherEpisodes?.[curEpisodeIndex + 1] ?? null
-});
 
 const details = computed(() => {
   return normalizeEpisodeDetails(props.episode)
@@ -68,7 +59,6 @@ const onRated = (rating: number) => {
   
   localRating.value = rating;
 }
-
 </script>
 
 <template>
@@ -78,15 +68,23 @@ const onRated = (rating: number) => {
       <div class="tools">
         <component
           :is="prevEpisode ? NuxtLink : 'div'"
+          :to="`/show/${episode.showId}/episode/${prevEpisode?.id}`"
           class="arrow episode-prev"
           :class="{ 'arrow--disabled': !prevEpisode }"
+          :aria-disabled="!prevEpisode"
+          aria-label="Предыдущий эпизод"
+          name="Предыдущий эпизод"
         >
           <svg-icon name="arrow-right-alt" />
         </component>
         <component
           :is="nextEpisode ? NuxtLink : 'div'"
+          :to="`/show/${episode.showId}/episode/${nextEpisode?.id}`"
           class="arrow episode-next"
           :class="{ 'arrow--disabled': !nextEpisode }"
+          :aria-disabled="!nextEpisode"
+          aria-label="Следующий эпизод"
+          name="Следующий эпизод"
         >
           <svg-icon name="arrow-right-alt" />
         </component>
@@ -137,7 +135,7 @@ const onRated = (rating: number) => {
 
 <style lang="scss" scoped>
 .main {
-
+  max-width: 800px;
 }
 
 .header {
