@@ -17,6 +17,14 @@ const locale: Locale = {
   more: "Больше",
 }
 
+const onDayClick = (day: { colorIndex: number, count: number, date: Date }) => {
+  if (!day.count) {
+    return;
+  }
+  
+  console.log("🚀 ~ onDayClick ~ day:", day)
+}
+
 </script>
 
 <template>
@@ -27,6 +35,7 @@ const locale: Locale = {
       :locale="locale"
       :range-color="rangeColor"
       :no-data-text="false"
+      @day-click="onDayClick"
     />
   </div>
 </template>
