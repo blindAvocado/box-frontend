@@ -168,3 +168,23 @@ input[type="submit"] {
   scrollbar-width: none;
   scrollbar-color: transparent transparent;
 }
+
+.v-popper__popper {
+  top: -5px !important;
+}
+
+.v-popper--theme-tooltip {
+  .v-popper__inner {
+    min-width: 50px;
+    @include font("base");
+    font-size: 14px;
+    text-align: center;
+    color: color("text") !important;
+    background-color: color("border") !important;
+    padding: 2px 5px !important;
+  }
+
+  .v-popper__arrow-outer {
+    border-color: color("border") !important;
+  }
+}

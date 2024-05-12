@@ -7,7 +7,7 @@ const props = defineProps<{
   commentId: number,
 }>();
 
-const dateFormatted = convertISOTOString(props.date);
+const dateFormatted = convertISODateToString(props.date);
 
 const onAnchorClick = () => {
 

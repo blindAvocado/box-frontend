@@ -11,15 +11,15 @@ const route = useRoute();
 
 <template>
   <div v-if="community" class="community">
-    <NuxtLink :to="`/show/${$route.params.show_id}/members`" class="community__item watching">
+    <NuxtLink :to="`/show/${$route.params.show_id}/members`" v-tooltip="`${community.watching} смотрят`" class="community__item watching">
       <svg-icon name="eye"/>
       <div class="community__value">{{ normalizeBigNumbers(community.watching) }}</div>
     </NuxtLink>
-    <NuxtLink :to="`/show/${$route.params.show_id}/lists`" class="community__item lists">
+    <NuxtLink :to="`/show/${$route.params.show_id}/lists`" v-tooltip="`${community.lists} списков`" class="community__item lists">
       <svg-icon name="list"/>
       <div class="community__value">{{ normalizeBigNumbers(community.lists) }}</div>
     </NuxtLink>
-    <NuxtLink :to="`/show/${$route.params.show_id}/likes`" class="community__item favorites">
+    <NuxtLink :to="`/show/${$route.params.show_id}/likes`" v-tooltip="`${community.favorite} добавили в избранное`" class="community__item favorites">
       <svg-icon name="heart"/>
       <div class="community__value">{{ normalizeBigNumbers(community.favorite) }}</div>
     </NuxtLink>

@@ -7,7 +7,7 @@ export interface IProfile {
   recentLists?: IRecentLists[];
   following?: IUser[];
   activity: IActivity[];
-  watching: IWatching[];
+  watching: IProfileShowCard[];
   heatmap: IHeatmap[];
 }
 
@@ -24,20 +24,21 @@ interface IRatings {
   "0.5": number,
 }
 
-interface IActivity {
+export interface IActivity {
   date: string;
   watchedRuntime: number;
   items: IActivityItem[];
 }
 
-interface IActivityItem {
-  event: string;
+export interface IActivityItem {
+  event: "rated" | "watched" | "status" | "comment";
   value?: number | string;
+  date: string;
   target: IActivityTarget;
 }
 
 interface IActivityTarget {
-  type: "rated" | "watched" | "status" | "comment";
+  type: "episode" | "show";
   id: number;
   season?: number;
   episode?: number;
@@ -99,10 +100,10 @@ export interface IWasted {
   totalDays: number;
 }
 
-interface IWatching {
+export interface IProfileShowCard {
   id: number;
   title: string;
-  airStatus: string;
+  airStatus: "DEAD" | "AIRING" | "PAUSED";
   rating: number;
   watchedEpisodes: number;
   totalEpisodes: number;

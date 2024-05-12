@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ISocials, IStats, IUser, IWasted } from '~/types/profile';
-import ProfileWasted from './ProfileWasted.vue';
+import ProgressBar from '../base/ProgressBar.vue';
 
 const props = defineProps<{
   wasted: IWasted,
@@ -33,24 +33,29 @@ const props = defineProps<{
           </div>
         </div>
         <div class="profile-header__wasted">
-          <ProfileWasted
-            label="эпизодов"
-            :count="wasted.watchedEpisodes"
+          <ProgressBar
             :ratio="(wasted.watchedEpisodes / wasted.totalEpisodes) * 100"
             class="profile-header__wasted--episodes"
-          />
-          <ProfileWasted 
-            label="часов" 
-            :count="wasted.watchedHours"
+          >
+            <span class="value">{{ wasted.watchedEpisodes }}</span>
+            <span class="name">эпизодов</span>
+          </ProgressBar>
+
+          <ProgressBar
             :ratio="(wasted.watchedHours / wasted.totalHours) * 100"
             class="profile-header__wasted--hours"
-          />
-          <ProfileWasted 
-            label="дней" 
-            :count="wasted.watchedDays"
+          >
+            <span class="value">{{ wasted.watchedHours }}</span>
+            <span class="name">часов</span>
+          </ProgressBar>
+
+          <ProgressBar
             :ratio="(wasted.watchedDays / wasted.totalDays) * 100"
             class="profile-header__wasted--days"
-          />
+          >
+            <span class="value">{{ wasted.watchedDays }}</span>
+            <span class="name">дней</span>
+          </ProgressBar>
         </div>
       </div>
     </div>
@@ -151,17 +156,31 @@ const props = defineProps<{
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    .value {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1;
+      color: color("text", "base");
+    }
+
+    .name {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1;
+      color: color("text", "4");
+    }
   }
 
-  &__wasted--episodes .profile-wasted__progress-value {
+  &__wasted--episodes .progress-bar__progress-value {
     background-color: color("elements", "red");
   }
 
-  &__wasted--hours .profile-wasted__progress-value {
+  &__wasted--hours .progress-bar__progress-value {
     background-color: color("elements", "mint");
   }
   
-  &__wasted--days .profile-wasted__progress-value {
+  &__wasted--days .progress-bar__progress-value {
     background-color: color("accent", "base");
   }
 

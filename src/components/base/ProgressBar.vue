@@ -1,27 +1,24 @@
 <script setup lang="ts">
 
 const props = defineProps<{
-  count: number,
-  label: string,
   ratio: number,
 }>();
 
 </script>
 
 <template>
-  <div class="profile-wasted">
-    <div class="profile-wasted__label">
-      <span class="profile-wasted__label-value">{{ count }}</span>
-      <span class="profile-wasted__label-name">{{ label }}</span>
+  <div class="progress-bar">
+    <div class="progress-bar__label">
+      <slot/>
     </div>
-    <div class="profile-wasted__progress">
-      <div class="profile-wasted__progress-value" :style="{ width: `${ratio}%` }"></div>
+    <div class="progress-bar__progress">
+      <div class="progress-bar__progress-value" :style="{ width: `${ratio}%` }"></div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.profile-wasted {
+.progress-bar {
   display: flex;
   flex-direction: column;
   gap: 2px;

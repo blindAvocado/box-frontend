@@ -6,6 +6,8 @@ import ShowTabs from '~/components/profile/ShowTabs.vue';
 import ProfileHeader from '~/components/profile/ProfileHeader.vue';
 import Heatmap from '~/components/profile/Heatmap.vue';
 import ProfileSettings from '~/components/profile/ProfileSettings.vue';
+import User from '~/components/cards/User.vue';
+import ActivityBlock from '~/components/profile/ActivityBlock.vue';
 
 const user = useUser();
 const route = useRoute();
@@ -40,34 +42,28 @@ const totalRatings = computed(() => {
         <div class="profile__body">
           <div class="profile__content">
             <HeaderBlock title="Сериалы">
-              <ShowTabs/>
+              <ShowTabs :stats="profile.stats" :init-shows="profile.watching"/>
             </HeaderBlock>
   
             <HeaderBlock title="Статистика по дням" :link="`${route.params.user_id}/wasted`">
               <template v-slot:default>
                 <Heatmap :data="profile.heatmap" />
               </template>
-              <template v-slot:link>
-                Полная статистика
-              </template>
+              <template v-slot:link>Полная статистика</template>
             </HeaderBlock>
   
-            <HeaderBlock title="Отслеживаемые" :link="`${route.params.user_id}/following`">
+            <HeaderBlock title="Отслеживаемые" :link="`${route.params.user_id}/following`" class="profile__following">
               <template v-slot:default>
-                <span>пук</span>
+                <User v-for="following in profile.following" :key="following.id" :user="following" />
               </template>
-              <template v-slot:link>
-                Все
-              </template>
+              <template v-slot:link>Все</template>
             </HeaderBlock>
   
             <HeaderBlock title="Последние события" :link="`${route.params.user_id}/activity`">
               <template v-slot:default>
-                <span>пук</span>
+                <ActivityBlock v-for="activity in profile.activity" :activity />
               </template>
-              <template v-slot:link>
-                Все события
-              </template>
+              <template v-slot:link>Все события</template>
             </HeaderBlock>
   
           </div>
@@ -108,6 +104,14 @@ const totalRatings = computed(() => {
     flex-direction: column;
     flex: 1 0 auto;
     gap: 20px;
+  }
+
+  &__following {
+    :deep(.block__body) {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
   }
 }
 
