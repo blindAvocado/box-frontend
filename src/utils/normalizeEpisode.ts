@@ -20,10 +20,10 @@ export function normalizeEpisodeDetails(properties: IEpisodePage) {
     value: properties.airdate,
   });
 
-  if (properties.personal.watchedDate) {
+  if (properties.personal?.watchedDate) {
     res.push({
       label: "Дата просмотра",
-      value: properties.personal.watchedDate,
+      value: properties.personal?.watchedDate,
     });
   }
 
@@ -31,6 +31,14 @@ export function normalizeEpisodeDetails(properties: IEpisodePage) {
     label: "Всего просмотров",
     value: numberWithSpaces(properties.watched),
   });
+
+  return res;
+}
+
+export function normalizeEpisodeAirDate(dateAired: string): string {
+  const start: Date = new Date(dateAired);
+  
+  let res = `${withLeadingZero(start.getDate())}.${withLeadingZero(start.getMonth() + 1)}.${start.getFullYear()}`;
 
   return res;
 }

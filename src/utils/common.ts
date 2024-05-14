@@ -17,7 +17,7 @@ export function numberWithSpaces(x: number) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
-function withLeadingZero(num: number): string {
+export function withLeadingZero(num: number): string {
   return ("0" + num).slice(-2)
 }
 

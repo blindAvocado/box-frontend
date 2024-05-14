@@ -54,13 +54,13 @@ const tabs = [
       </li>
     </ul>
     <Tabs :tabs :selected-tab @change-tab="onTabChange" class="show-tabs">
-      <div v-if="selectedTab === 'episodes'" class="episodesTab">
+      <div v-show="selectedTab === 'episodes'" class="episodesTab">
         <EpisodesTab :seasons="show.seasons" :episodes="show.episodes"/>
       </div>
-      <div v-if="selectedTab === 'actors'" class="actorsTab">
+      <div v-show="selectedTab === 'actors'" class="actorsTab">
         <ActorsList :actors="show.actors" />
       </div>
-      <div v-if="selectedTab === 'summary'" class="summaryTab">
+      <div v-show="selectedTab === 'summary'" class="summaryTab">
         {{ show.overview }}
       </div>
     </Tabs>
@@ -76,7 +76,7 @@ const tabs = [
 
 .header {
   display: flex;
-  align-items: flex-end;
+  align-items: baseline;
   flex-wrap: wrap;
   margin-bottom: 10px;
 
@@ -152,6 +152,8 @@ const tabs = [
 }
 
 .show-tabs {
+  width: 600px;
+
   :deep(.summaryTab) {
     font-weight: 300;
     color: color("text", "3");

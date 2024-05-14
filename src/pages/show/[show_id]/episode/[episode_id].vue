@@ -10,7 +10,8 @@ import EpisodeMainInfo from '~/components/episode/EpisodeMainInfo.vue';
 const user = useUser();
 const route = useRoute();
 
-const { data: episodePage } = await useFetch<IEpisodePage>(`/api/show/${route.params.show_id}/episode/${route.params.episode_id}`);
+const { data: episodePage } = await useFetch<IEpisodePage>(`/api/episode/${route.params.episode_id}`);
+console.log("🚀 ~ episodePage:", episodePage.value);
 if (!episodePage.value) {
   throw createError({
     statusCode: 404,
@@ -23,7 +24,7 @@ const otherEpisodes = computed((): IOtherEpisode[] | null => {
 })
 
 const friendsRatings = computed((): IUserRating[] | null => {
-  return episodePage.value?.personal.friends ?? null
+  return episodePage.value?.personal?.friends ?? null
 })
 
 const breadcrumbs = computed(() => {

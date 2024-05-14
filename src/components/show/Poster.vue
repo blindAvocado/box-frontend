@@ -10,7 +10,6 @@ defineProps<{
   <div v-if="poster" class="poster">
     <NuxtPicture
       :src="poster"
-      format="avif,webp,jpg"
       height="345"
       densities="x1 x2"
       sizes="md:230px"

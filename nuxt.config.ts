@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    domains: ['image.tmdb.org']
+    domains: ['image.tmdb.org', 'df2c-2a02-6ea0-cb15-1002-1445-5a61-5056-7612.ngrok-free.app'],
+    format: ["avif", "webp"],
   },
 });

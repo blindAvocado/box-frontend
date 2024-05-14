@@ -94,7 +94,6 @@ const onRated = (rating: number) => {
       <NuxtPicture
         v-if="episode.stillPath"
         :src="episode.stillPath"
-        format="avif,webp,jpg"
         sizes="lg:800px"
         class="banner"
       />
@@ -128,7 +127,7 @@ const onRated = (rating: number) => {
       </li>
     </div>
     <div class="comments">
-      <EpisodeComments :comments="episode.comments" :open="episode.personal.commentsOpen" />
+      <EpisodeComments :comments="episode.comments" :open="episode.personal?.commentsOpen" />
     </div>
   </div>
 </template>

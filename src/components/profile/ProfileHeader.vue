@@ -15,7 +15,7 @@ const props = defineProps<{
   <div class="profile-header">
     <div class="profile-header__main">
       <div class="profile-header__avatar">
-        <NuxtPicture v-if="user.avatar" format="avif,webp,jpg" :src="user.avatar" :width="120" :height="120"
+        <NuxtPicture v-if="user.avatar" :src="user.avatar" :width="120" :height="120"
           sizes="md:120px" :placeholder="[120, 120, 75, 5]" />
         <svg-icon v-else name="profile" />
       </div>

@@ -13,7 +13,6 @@ defineProps<{
     <span class="profile">
       <NuxtPicture
         v-if="user.avatar"
-        format="avif,webp,jpg"
         :src="user.avatar"
         :width="32"
         :height="32"

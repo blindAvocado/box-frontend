@@ -1,11 +1,37 @@
 import type { IShow } from "~/types/show";
 
-export function normalizeShowAirYears(dateStarted: string, dateEnded?: string): string { 
-  return dateStarted.split('.')[2] + '-' + (dateEnded ? dateEnded.split('.')[2] : 'н.в.');
+export function normalizeShowAirYears(dateStarted: string, dateEnded?: string): string {
+  const start: Date = new Date(dateStarted);
+  let end: Date;
+  
+  let res = `${start.getFullYear()}`;
+
+  if (dateEnded) {
+    end = new Date(dateEnded);
+    if (start.getFullYear() !== end.getFullYear()) {
+      res += `-${end.getFullYear()}`
+    }
+  } else {
+    res += `-н.в.`
+  }
+
+  return res;
 }
 
-export function normalizeShowAirDate(dateStarted: string, dateEnded?: string): string { 
-  return dateStarted + ' — ' + (dateEnded || 'н.в.');
+export function normalizeShowAirDate(dateStarted: string, dateEnded?: string): string {
+  const start: Date = new Date(dateStarted);
+  let end: Date;
+  
+  let res = `${withLeadingZero(start.getDate())}.${withLeadingZero(start.getMonth() + 1)}.${start.getFullYear()}`;
+
+  if (dateEnded) {
+    end = new Date(dateEnded);
+    res += ` — ${withLeadingZero(end.getDate())}.${withLeadingZero(end.getMonth() + 1)}.${end.getFullYear()}`;
+  } else {
+    res += ` — н.в.`;
+  }
+
+  return res;
 }
 
 export function normalizeShowTotalRuntime(totalRuntime: number): string {

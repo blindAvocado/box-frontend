@@ -73,6 +73,16 @@ const onTabClick = (tabName: string) => {
   }
 }
 
+.tab-content {
+  flex: 1 0 auto;
+  display: flex;
+
+  :deep(> div) {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
 .tab-btn {
   font-size: 16px;
   text-transform: uppercase;

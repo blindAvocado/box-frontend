@@ -43,7 +43,7 @@ watch(localWatched, (val) => {
         <span>{{ episode.comments }}</span>
         <svg-icon name="comment" />
       </div>
-      <div class="date">{{ episode.airdate }}</div>
+      <div class="date">{{ normalizeEpisodeAirDate(episode.airdate) }}</div>
       <StarRating
         :value="localRating"
         :height="22"

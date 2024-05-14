@@ -22,7 +22,6 @@ withDefaults(
       v-if="user.avatar"
       :src="user.avatar"
       sizes="md:48px"
-      format="avif,webp,jpg"
       width="48"
       height="48"
       class="user-card__avatar"
