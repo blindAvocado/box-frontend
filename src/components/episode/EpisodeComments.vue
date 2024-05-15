@@ -3,6 +3,7 @@ import type { IComment } from '~/types/episode';
 import CommentField from './CommentField.vue';
 import CommentTree from './CommentTree.vue';
 
+const route = useRoute();
 
 const props = defineProps<{
   comments: IComment[] | undefined,
@@ -10,6 +11,9 @@ const props = defineProps<{
 }>();
 
 const localOpen = ref<boolean>(props.open ?? false);
+
+const commentsList = ref<IComment[] | undefined>(props.comments);
+const commentField = ref<InstanceType<typeof CommentField>>();
 
 const commentsCount = computed(() => {
   if (!props.comments?.length) {
@@ -38,6 +42,19 @@ const countComments = (obj: any, count: number = 0): number => {
   return count;
 }
 
+const onSubmitComment = async (text: string) => {
+  const data = await useFetchAuth(`http://127.0.0.1:8000/api/episode/${route.params.episode_id}/comment`, {
+    method: "POST",
+    body: JSON.stringify({ body: text }), 
+  });
+
+  if (commentField.value) {
+    commentField.value.commentText = "";
+  }
+
+  commentsList.value?.push(data as IComment);
+}
+
 </script>
 
 <template>
@@ -46,16 +63,16 @@ const countComments = (obj: any, count: number = 0): number => {
       <h3 class="comments__title">Комментарии</h3>
       <span v-if="commentsCount" class="comments__count">{{ commentsCount }}</span>
     </div>
-    <div v-if="!localOpen" class="comments__closed">
+    <div v-if="!localOpen && commentsList?.length" class="comments__closed">
       <div class="comments__spoiler">Комментарии скрыты, так как в них могут содержаться спойлеры</div>
       <BaseButton @on-click="onOpenComments" class="comments__open">Показать комментарии</BaseButton>
     </div>
     <div v-else class="comments__opened">
-      <CommentTree v-if="comments" :comments />
+      <CommentTree v-if="commentsList?.length" :comments="commentsList" />
       <div v-else class="comments__empty">Комментариев пока нет, и Вы можете оставить первый!</div>
       <div class="comments__new">
         <div class="comments__new-title">Написать комментарий</div>
-        <CommentField />
+        <CommentField ref="commentField" @add-comment="onSubmitComment" />
       </div>
     </div>
   </div>

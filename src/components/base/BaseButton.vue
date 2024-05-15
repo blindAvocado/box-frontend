@@ -2,10 +2,14 @@
 
 withDefaults(
   defineProps<{
-    kind?: "highlighted" | "dark"
+    kind?: "highlighted" | "dark",
+    disabled?: boolean,
+    type?: "button" | "submit" | "reset",
   }>(),
   {
-    kind: "highlighted"
+    kind: "highlighted",
+    disabled: false,
+    type: "button",
   }
 )
 
@@ -18,7 +22,12 @@ const onClick = () => {
 </script>
 
 <template>
-  <button type="button" @click.prevent="onClick" class="button">
+  <button 
+    :type="type" 
+    @click.prevent="onClick" 
+    class="button"
+    :disabled="disabled"
+  >
     <slot>
       Text
     </slot>

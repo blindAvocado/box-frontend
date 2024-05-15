@@ -188,3 +188,67 @@ input[type="submit"] {
     border-color: color("border") !important;
   }
 }
+
+.auth {
+  margin: 100px auto;
+  max-width: 350px;
+
+  &__header {
+    font-weight: 500;
+    font-size: 20px;
+    color: color("text", "2");
+    margin-bottom: 10px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__submit {
+    width: fit-content !important;
+  }
+  
+  &__tip {
+    gap: 10px;
+    font-size: 14px;
+    color: color("text", "4");
+  }
+  
+  &__tip-btn {
+    font-size: 14px;
+    font-weight: 500;
+    color: color("accent");
+    margin-left: 5px;
+  }
+}
+
+.out-in-enter-active,
+.out-in-leave-active {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s linear;
+}
+
+.out-in-enter-from {
+  transform: translateX(0);
+
+}
+
+.out-in-enter-from {
+  transform: translateX(100%);
+}
+
+.out-in-leave-to {
+  transform: translateX(-100%);
+}

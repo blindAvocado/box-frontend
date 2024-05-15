@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { IComment } from '~/types/episode';
 import CommentUser from './CommentUser.vue';
+import CommentField from './CommentField.vue';
 
+const route = useRoute();
 
 const props = withDefaults(
   defineProps<{
@@ -15,8 +17,11 @@ const props = withDefaults(
 
 const emit = defineEmits(["closeThread"]);
 
+const commentField = ref<InstanceType<typeof CommentField>>();
 const menuOpened = ref<boolean>(false);
 const isThreadExpanded = ref<boolean>(true);
+const isInputShown = ref<boolean>(false);
+const commentLocal = ref<IComment>(props.comment);
 
 const onThreadToggle = () => {
   isThreadExpanded.value = !isThreadExpanded.value
@@ -26,23 +31,46 @@ const closeThread = () => {
   emit("closeThread")
 }
 
+const onReply = () => {
+  isInputShown.value = !isInputShown.value;
+}
+
+const onReplySubmit = async (text: string) => {
+  const data = await useFetchAuth(`http://127.0.0.1:8000/api/episode/${route.params.episode_id}/comment`, {
+    method: "POST",
+    body: JSON.stringify({ body: text, parentCommentId: props.comment.id }), 
+  });
+
+  if (commentField.value) {
+    commentField.value.commentText = "";
+  }
+
+  isInputShown.value = false;
+
+  if (!commentLocal.value.subcomments?.length) {
+    commentLocal.value.subcomments = [];  
+  }
+
+  commentLocal.value.subcomments.push(data as IComment);
+}
+
 </script>
 
 <template>
   <div class="comment">
     <div class="comment__container">
       <div class="comment__header">
-        <CommentUser :user="comment.owner" :date="comment.createdAt" :comment-id="comment.id" />
+        <CommentUser :user="commentLocal.owner" :date="commentLocal.createdAt" :comment-id="commentLocal.id" />
       </div>
       <div class="comment__body">
-        <div :id="`c${comment.id}`" class="comment__anchor"></div>
-        <div class="comment__text">{{ comment.body.text }}</div>
-        <div v-if="comment.body.image" class="comment__image">
-          <NuxtPicture :src="comment.body.image" />
+        <div :id="`c${commentLocal.id}`" class="comment__anchor"></div>
+        <div class="comment__text">{{ commentLocal.body.text }}</div>
+        <div v-if="commentLocal.body.image" class="comment__image">
+          <NuxtPicture :src="commentLocal.body.image" />
         </div>
       </div>
       <div class="comment__tools">
-        <button class="comment__reply">
+        <button class="comment__reply" @click.prevent="onReply">
           <svg-icon name="reply" />
           <span>Ответить</span>
         </button>
@@ -54,12 +82,14 @@ const closeThread = () => {
           </div>
         </div>
       </div>
+      <CommentField ref="commentField" v-if="isInputShown" @add-comment="onReplySubmit" />
     </div>
-    <div class="subcomment">
+    <div v-if="commentLocal.subcomments" class="subcomment">
       <CommentItem
+        v-for="subcomment in commentLocal.subcomments"
+        :key="subcomment.id"
         v-show="isThreadExpanded"
-        v-if="comment.subcomment"
-        :comment="comment.subcomment"
+        :comment="subcomment"
         :has-parent="true"
         @close-thread="onThreadToggle"
       />
@@ -197,6 +227,14 @@ const closeThread = () => {
     width: 1px;
     height: 100%;
     background-color: color("text", "5");
+  }
+
+  :deep(.comment-field) {
+    margin: 10px 0;
+  }
+
+  :deep(.comment-field__textarea) {
+    min-height: 70px;
   }
 }
 </style>

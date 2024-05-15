@@ -17,13 +17,13 @@ export function normalizeEpisodeDetails(properties: IEpisodePage) {
 
   res.push({
     label: "Дата показа",
-    value: properties.airdate,
+    value: normalizeEpisodeAirDate(properties.airdate),
   });
 
   if (properties.personal?.watchedDate) {
     res.push({
       label: "Дата просмотра",
-      value: properties.personal?.watchedDate,
+      value: normalizeEpisodeAirDate(properties.personal?.watchedDate),
     });
   }
 

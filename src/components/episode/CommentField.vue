@@ -2,15 +2,18 @@
 
 const emit = defineEmits(['addComment']);
 
+const commentText = ref("");
+
 const onSubmit = () => {
-  emit('addComment')
+  emit('addComment', commentText.value)
 }
 
+defineExpose({ commentText });
 </script>
 
 <template>
   <div class="comment-field">
-    <textarea class="comment-field__textarea" placeholder="Оставить комментарий"></textarea>
+    <textarea v-model="commentText" class="comment-field__textarea" placeholder="Оставить комментарий"></textarea>
     <div class="comment-field__btns">
       <BaseButton type="button" @on-click="onSubmit" class="comment-field__submit">Написать</BaseButton>
       <button type="button" class="comment-field__picture">

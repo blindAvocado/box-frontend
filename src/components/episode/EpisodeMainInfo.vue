@@ -38,7 +38,7 @@ const prevEpisode = ref<IOtherEpisode | null>(getAdjacentEpisode("prev"));
 const nextEpisode = ref<IOtherEpisode | null>(getAdjacentEpisode("next"));
 
 const localWatched = ref(props.episode?.personal?.watched);
-const localRating = ref(user.loggedIn ? props.episode?.personal?.rating ?? 0 : props.episode?.rating.average);
+const localRating = ref(user.loggedIn ? props.episode?.personal?.rating ?? 0 : props.episode?.rating?.average);
 
 const details = computed(() => {
   return normalizeEpisodeDetails(props.episode)
@@ -64,7 +64,10 @@ const onRated = (rating: number) => {
 <template>
   <div class="main">
     <div class="header">
-      <h1 class="title">{{ episode.name }}</h1>
+      <h1 class="title">
+        <span>{{ normalizeEpisodeMarking(episode.seasonNumber, episode.episodeNumber) }} — </span>
+        {{ episode.name }}
+      </h1>
       <div class="tools">
         <component
           :is="prevEpisode ? NuxtLink : 'div'"
@@ -126,6 +129,9 @@ const onRated = (rating: number) => {
         </div>
       </li>
     </div>
+    <div v-if="episode.overview" class="overview">
+      {{ episode.overview }}
+    </div>
     <div class="comments">
       <EpisodeComments :comments="episode.comments" :open="episode.personal?.commentsOpen" />
     </div>
@@ -148,6 +154,10 @@ const onRated = (rating: number) => {
   font-size: 32px;
   font-weight: 700;
   color: color("text", "1");
+
+  span {
+    font-weight: 400;
+  }
 }
 
 .tools {
@@ -256,6 +266,12 @@ const onRated = (rating: number) => {
     font-size: 16px;
     line-height: 1.2;
   }
+}
+
+.overview {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid color("border", "base");
 }
 
 .comments {

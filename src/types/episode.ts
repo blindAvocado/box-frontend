@@ -30,7 +30,7 @@ export interface IComment {
   createdAt: string
   owner: ICommentOwner
   body: ICommentBody
-  subcomment: IComment
+  subcomments: IComment[]
 }
 
 export interface ICommentOwner {
